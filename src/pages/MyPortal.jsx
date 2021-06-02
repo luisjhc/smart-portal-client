@@ -1,37 +1,19 @@
 import React from "react";
-import axios from "axios";
-import ReactMarkdown from "react-markdown";
-import * as CONSTS from "../utils/consts";
+import { Link } from "react-router-dom";
+import * as PATHS from "../utils/paths";
 
 function MyPortal(props) {
-  console.log("props:", props);
-  const [listOfContent, setListOfContent] = React.useState([]);
-
-  React.useEffect(() => {
-    axios
-      .get(`${CONSTS.SERVER_URL}/myPortal`)
-      .then((response) => {
-        console.log("response:", response);
-        setListOfContent(response.data);
-      })
-      .catch((err) => {
-        console.log("err:", err);
-      });
-  }, []);
-
   return (
     <div>
       {props.user.role === "teacher" ? (
         <div>
-          <h1>CLASSES</h1>
-          {listOfContent.map((content) => {
-            return (
-              <div key={content._id}>
-                {content.title}
-                <ReactMarkdown>{content.text}</ReactMarkdown>
-              </div>
-            );
-          })}
+          <Link to={PATHS.CONTENT}>CONTENT</Link>
+          <br />
+          <br />
+          <Link to={PATHS.CREATESTUDENT}>CREATE NEW STUDENT</Link>
+          <br />
+          <br />
+          <Link to={PATHS.LIST_OF_STUDENTS}>LIST OF STUDENTS</Link>
         </div>
       ) : (
         <div>

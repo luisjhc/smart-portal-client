@@ -4,10 +4,12 @@ import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import LogIn from "./pages/LogIn";
-import MyPortal from "./pages/MyPortal";
 import Signup from "./pages/Signup";
 import NormalRoute from "./routing-components/NormalRoute";
 import ProtectedRoute from "./routing-components/ProtectedRoute";
+import MyPortal from "./pages/MyPortal";
+import Content from "./pages/Content";
+import CreateStudent from "./pages/CreateStudent";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import * as CONSTS from "./utils/consts";
@@ -76,6 +78,19 @@ export default function App() {
           exact
           path={PATHS.MYPORTAL}
           component={MyPortal}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CONTENT}
+          component={Content}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CREATESTUDENT}
+          authenticate={authenticate}
+          component={CreateStudent}
           user={user}
         />
       </Switch>

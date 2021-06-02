@@ -7,13 +7,12 @@ import * as PATHS from "../../utils/paths";
 const Navbar = (props) => {
   return (
     <nav>
-      <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-        Home Page
-      </Link>
-
       <div className="nav__authLinks">
         {props.user ? (
           <>
+            <Link to={PATHS.MYPORTAL} className="nav__projectName">
+              My Portal
+            </Link>
             {/* <Link to={PATHS.PROTECTEDPAGE} className="authLink">
               Protected Page
             </Link> */}

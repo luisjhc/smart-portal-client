@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { signup } from "../services/auth";
-import "./auth.css";
 import * as CONSTS from "../utils/consts";
-import * as PATHS from "../utils/paths";
+// import * as PATHS from "../utils/paths";
 
-export default function Signup({ authenticate, history }) {
+function CreateStudent({ authenticate, history }) {
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
+
   const { username, password } = form;
   const [error, setError] = useState(null);
 
@@ -25,22 +25,23 @@ export default function Signup({ authenticate, history }) {
     };
     signup(credentials).then((res) => {
       if (!res.status) {
-        // unsuccessful signup
-        console.error("Signup was unsuccessful: ", res);
+        // unsuccessful
+        console.error("There was an error creating the student: ", res);
         return setError({
-          message: "Signup was unsuccessful! Please check the console.",
+          message:
+            "There was an error creating the student! Please check the console.",
         });
       }
-      // successful signup
+      // successful
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
       authenticate(res.data.user);
-      history.push(PATHS.MYPORTAL);
+      // history.push(PATHS.MYPORTAL);
     });
   }
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Create New Student</h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
         <label htmlFor="input-username">Username</label>
         <input
@@ -79,3 +80,5 @@ export default function Signup({ authenticate, history }) {
     </div>
   );
 }
+
+export default CreateStudent;
