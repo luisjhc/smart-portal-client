@@ -34,7 +34,7 @@ export default function Signup({ authenticate, history }) {
       // successful signup
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
       authenticate(res.data.user);
-      history.push(PATHS.HOMEPAGE);
+      history.push(PATHS.CONTENT);
     });
   }
 
@@ -47,7 +47,7 @@ export default function Signup({ authenticate, history }) {
           id="input-username"
           type="text"
           name="username"
-          placeholder="Text"
+          placeholder="userName"
           value={username}
           onChange={handleInputChange}
           required
