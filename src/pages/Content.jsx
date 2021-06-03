@@ -9,13 +9,16 @@ function MyPortal(props) {
 
   React.useEffect(() => {
     axios
-      .get(`${CONSTS.SERVER_URL}/myPortal/content`)
+      .get(`${CONSTS.SERVER_URL}/myPortal/content`, {
+        headers: {
+          authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
+        },
+      })
       .then((response) => {
-        console.log("response:", response);
         setListOfContent(response.data);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(err.response);
       });
   }, []);
 
@@ -24,6 +27,7 @@ function MyPortal(props) {
       {props.user.role === "teacher" ? (
         <div>
           <h1>CLASSES</h1>
+
           {listOfContent.map((content) => {
             return (
               <div key={content._id}>
