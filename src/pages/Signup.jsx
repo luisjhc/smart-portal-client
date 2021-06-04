@@ -75,6 +75,7 @@ export default function Signup({ authenticate, history }) {
           placeholder="Email"
           value={email}
           onChange={handleInputChange}
+          required
         />
 
         {error && (

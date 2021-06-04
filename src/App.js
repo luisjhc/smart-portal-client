@@ -10,6 +10,7 @@ import ProtectedRoute from "./routing-components/ProtectedRoute";
 import MyPortal from "./pages/MyPortal";
 import Content from "./pages/Content";
 import CreateStudent from "./pages/CreateStudent";
+import ListOfStudents from "./pages/ListOfStudents";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import * as CONSTS from "./utils/consts";
@@ -91,6 +92,13 @@ export default function App() {
           path={PATHS.CREATESTUDENT}
           authenticate={authenticate}
           component={CreateStudent}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.LIST_OF_STUDENTS}
+          authenticate={authenticate}
+          component={ListOfStudents}
           user={user}
         />
       </Switch>

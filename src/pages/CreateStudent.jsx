@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { signup } from "../services/auth";
 import * as CONSTS from "../utils/consts";
-// import * as PATHS from "../utils/paths";
 
-function CreateStudent({ authenticate, history }) {
+function CreateStudent({ authenticate }) {
   const [form, setForm] = useState({
     username: "",
     password: "",
+    email: "",
   });
 
-  const { username, password } = form;
+  const { username, password, email } = form;
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -22,6 +23,7 @@ function CreateStudent({ authenticate, history }) {
     const credentials = {
       username,
       password,
+      email,
     };
     signup(credentials).then((res) => {
       if (!res.status) {
@@ -35,7 +37,20 @@ function CreateStudent({ authenticate, history }) {
       // successful
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
       authenticate(res.data.user);
-      // history.push(PATHS.MYPORTAL);
+
+      // sending a success message
+      if (res.status) {
+        return setSuccess({
+          message: `The student ${res.data.user.username} was created successfully.`,
+        });
+      }
+    });
+
+    // to clear the form
+    setForm({
+      username: "",
+      password: "",
+      email: "",
     });
   }
 
@@ -65,7 +80,22 @@ function CreateStudent({ authenticate, history }) {
           required
           minLength="8"
         />
+        <label htmlFor="input-email">Email</label>
+        <input
+          id="input-email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          onChange={handleInputChange}
+          required
+        />
 
+        {success && (
+          <div className="success-block">
+            <p>{success.message}</p>
+          </div>
+        )}
         {error && (
           <div className="error-block">
             <p>There was an error submiting the form:</p>
