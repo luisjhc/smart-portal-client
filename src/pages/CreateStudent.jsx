@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { signup } from "../services/auth";
 import * as CONSTS from "../utils/consts";
+import axios from "axios";
 
 function CreateStudent({ authenticate }) {
   const [form, setForm] = useState({
@@ -25,26 +25,22 @@ function CreateStudent({ authenticate }) {
       password,
       email,
     };
-    signup(credentials).then((res) => {
-      if (!res.status) {
-        // unsuccessful
-        console.error("There was an error creating the student: ", res);
-        return setError({
-          message:
-            "There was an error creating the student! Please check the console.",
-        });
-      }
-      // successful
-      localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
-      authenticate(res.data.user);
-
-      // sending a success message
-      if (res.status) {
+    axios
+      .post(`${CONSTS.SERVER_URL}/myPortal/createStudent`, credentials, {
+        headers: {
+          authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
+        },
+      })
+      .then((res) => {
         return setSuccess({
-          message: `The student ${res.data.user.username} was created successfully.`,
+          message: `The student ${res.data.newUser.username} was created successfully.`,
         });
-      }
-    });
+      })
+      .catch((err) => {
+        return setError({
+          message: "There was an error creating the student! Please try again.",
+        });
+      });
 
     // to clear the form
     setForm({
@@ -98,7 +94,6 @@ function CreateStudent({ authenticate }) {
         )}
         {error && (
           <div className="error-block">
-            <p>There was an error submiting the form:</p>
             <p>{error.message}</p>
           </div>
         )}
