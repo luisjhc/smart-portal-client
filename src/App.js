@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import NormalRoute from "./routing-components/NormalRoute";
 import ProtectedRoute from "./routing-components/ProtectedRoute";
 import MyPortal from "./pages/MyPortal";
+import MyProfile from "./pages/MyProfile";
 import Content from "./pages/Content";
 import CreateStudent from "./pages/CreateStudent";
 import ListOfStudents from "./pages/ListOfStudents";
@@ -80,6 +81,13 @@ export default function App() {
           path={PATHS.MYPORTAL}
           component={MyPortal}
           user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.MYPROFILE}
+          component={MyProfile}
+          user={user}
+          authenticate={authenticate}
         />
         <ProtectedRoute
           exact

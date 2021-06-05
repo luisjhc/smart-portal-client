@@ -6,11 +6,13 @@ import * as PATHS from "../utils/paths";
 
 export default function Signup({ authenticate, history }) {
   const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
     email: "",
   });
-  const { username, password, email } = form;
+  const { firstName, lastName, username, password, email } = form;
   const [error, setError] = useState(null);
 
   function handleInputChange(event) {
@@ -24,6 +26,8 @@ export default function Signup({ authenticate, history }) {
       username,
       password,
       email,
+      firstName,
+      lastName,
     };
     signup(credentials).then((res) => {
       if (!res.status) {
@@ -44,6 +48,26 @@ export default function Signup({ authenticate, history }) {
     <div>
       <h1>Sign Up</h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
+        <label htmlFor="input-firstName">First Name</label>
+        <input
+          id="input-firstName"
+          type="text"
+          name="firstName"
+          placeholder="firstName"
+          value={firstName}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="input-lastName">Last Name</label>
+        <input
+          id="input-lastName"
+          type="text"
+          name="lastName"
+          placeholder="lastName"
+          value={lastName}
+          onChange={handleInputChange}
+          required
+        />
         <label htmlFor="input-username">Username</label>
         <input
           id="input-username"

@@ -5,6 +5,8 @@ import ReactMarkdown from "react-markdown";
 import ReactPlayer from "react-player/youtube";
 
 function MyPortal(props) {
+  const { user } = props;
+  console.log(props);
   const [listOfContent, setListOfContent] = React.useState([]);
 
   React.useEffect(() => {
