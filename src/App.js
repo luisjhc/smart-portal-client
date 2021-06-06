@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch } from "react-router-dom";
+import { Switch, useHistory } from "react-router-dom";
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
@@ -12,6 +12,7 @@ import MyProfile from "./pages/MyProfile";
 import Content from "./pages/Content";
 import CreateStudent from "./pages/CreateStudent";
 import ListOfStudents from "./pages/ListOfStudents";
+import SingleClassPage from "./pages/SingleClassPage";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import * as CONSTS from "./utils/consts";
@@ -19,6 +20,7 @@ import * as CONSTS from "./utils/consts";
 export default function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     const accessToken = localStorage.getItem(CONSTS.ACCESS_TOKEN);
@@ -48,6 +50,7 @@ export default function App() {
       }
       localStorage.removeItem(CONSTS.ACCESS_TOKEN);
       setIsLoading(false);
+      history.push("/");
       return setUser(null);
     });
   }
@@ -107,6 +110,13 @@ export default function App() {
           path={PATHS.LIST_OF_STUDENTS}
           authenticate={authenticate}
           component={ListOfStudents}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CLASS}
+          authenticate={authenticate}
+          component={SingleClassPage}
           user={user}
         />
       </Switch>

@@ -35,6 +35,7 @@ function ListOfStudents(props) {
                 <ul>
                   <li>User name: {filteredStudent.username}</li>
                   <li>Email: {filteredStudent.email}</li>
+                  <li>Level: {filteredStudent.level}</li>
                 </ul>
               </li>
             </ul>

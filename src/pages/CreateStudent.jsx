@@ -9,9 +9,10 @@ function CreateStudent() {
     username: "",
     password: "",
     email: "",
+    level: "",
   });
 
-  const { firstName, lastName, username, password, email } = form;
+  const { firstName, lastName, username, password, email, level } = form;
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
@@ -28,6 +29,7 @@ function CreateStudent() {
       username,
       password,
       email,
+      level,
     };
     axios
       .post(`${CONSTS.SERVER_URL}/myPortal/createStudent`, credentials, {
@@ -112,6 +114,36 @@ function CreateStudent() {
           onChange={handleInputChange}
           required
         />
+        <label htmlFor="input-level">Level:</label>
+        <div>
+          <input
+            id="beginner"
+            type="radio"
+            name="level"
+            value="beginner"
+            onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="beginner">beginner</label>
+          <input
+            id="intermediate"
+            type="radio"
+            name="level"
+            value="intermediate"
+            onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="intermediate">intermediate</label>
+          <input
+            id="advanced"
+            type="radio"
+            name="level"
+            value="advanced"
+            onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="advanced">advanced</label>
+        </div>
 
         {success && (
           <div className="success-block">

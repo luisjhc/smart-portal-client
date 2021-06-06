@@ -4,7 +4,7 @@ import * as CONSTS from "../utils/consts";
 import ReactMarkdown from "react-markdown";
 import ReactPlayer from "react-player/youtube";
 
-function MyPortal(props) {
+function MyPortal() {
   //const { user } = props;
   //console.log(props);
   const [listOfContent, setListOfContent] = React.useState([]);
@@ -26,27 +26,41 @@ function MyPortal(props) {
 
   return (
     <div>
-      {props.user.role === "teacher" ? (
-        <div>
-          <h1>CLASSES</h1>
-
-          {listOfContent.map((content) => {
-            return (
-              <div key={content._id}>
-                {content.title}
-                <ReactMarkdown>{content.text}</ReactMarkdown>
-                <ReactPlayer url={content.video} controls />
-              </div>
-            );
-          })}
+      <h1>CLASSES</h1>
+      {listOfContent.map((content) => (
+        <div key={content._id}>
+          <h3>{content.title}</h3>
+          <ReactMarkdown>{content.text}</ReactMarkdown>
+          <ReactPlayer url={content.video} controls />
         </div>
-      ) : (
-        <div>
-          <h1>student</h1>
-        </div>
-      )}
+      ))}
     </div>
   );
 }
+
+//   return (
+//     <div>
+//       {props.user.role === "teacher" ? (
+//         <div>
+//           <h1>CLASSES</h1>
+
+//           {listOfContent.map((content) => {
+//             return (
+//               <div key={content._id}>
+//                 {content.title}
+//                 <ReactMarkdown>{content.text}</ReactMarkdown>
+//                 <ReactPlayer url={content.video} controls />
+//               </div>
+//             );
+//           })}
+//         </div>
+//       ) : (
+//         <div>
+//           <h1>student</h1>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
 
 export default MyPortal;

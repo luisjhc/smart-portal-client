@@ -7,3 +7,5 @@ export const MYPROFILE = "/myProfile";
 export const CONTENT = "/myPortal/content";
 export const CREATESTUDENT = "/myPortal/createStudent";
 export const LIST_OF_STUDENTS = "/myPortal/students";
+export const CLASS = `${MYPORTAL}/:classId`;
+export const HOMEWORK = `${MYPORTAL}/:homeworkId`;
