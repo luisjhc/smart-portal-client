@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import * as PATHS from "../utils/paths";
 import * as CONSTS from "../utils/consts";
 
 function MyProfile(props) {
@@ -33,12 +32,12 @@ function MyProfile(props) {
       />
 
       <div className="updates-toggle">
-        <button onClick={profileToggle}>Update profile Form&#10549;</button>
+        <button onClick={profileToggle}>Update profile Form &#10549;</button>
         {displayUpdateProfile && (
           <UpdateProfile user={user} authenticate={authenticate} />
         )}
         <br />
-        <button onClick={passwordToggle}>Update Password Form&#10549;</button>
+        <button onClick={passwordToggle}>Update Password Form &#10549;</button>
         {displayUpdatePassword && <UpdatePassword />}
         <br />
         <button>Delete Account</button>

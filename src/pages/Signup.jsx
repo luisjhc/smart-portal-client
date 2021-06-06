@@ -11,8 +11,9 @@ export default function Signup({ authenticate, history }) {
     username: "",
     password: "",
     email: "",
+    role: "",
   });
-  const { firstName, lastName, username, password, email } = form;
+  const { firstName, lastName, username, password, email, role } = form;
   const [error, setError] = useState(null);
 
   function handleInputChange(event) {
@@ -28,6 +29,7 @@ export default function Signup({ authenticate, history }) {
       email,
       firstName,
       lastName,
+      role,
     };
     signup(credentials).then((res) => {
       if (!res.status) {
@@ -78,7 +80,6 @@ export default function Signup({ authenticate, history }) {
           onChange={handleInputChange}
           required
         />
-
         <label htmlFor="input-password">Password</label>
         <input
           id="input-password"
@@ -90,7 +91,6 @@ export default function Signup({ authenticate, history }) {
           required
           minLength="8"
         />
-
         <label htmlFor="input-email">Email</label>
         <input
           id="input-email"
@@ -101,14 +101,33 @@ export default function Signup({ authenticate, history }) {
           onChange={handleInputChange}
           required
         />
-
+        <label htmlFor="input-role">Are you a teacher or a student?</label>
+        <div>
+          <input
+            id="teacher"
+            type="radio"
+            name="role"
+            value="teacher"
+            onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="teacher">teacher</label>
+          <input
+            id="student"
+            type="radio"
+            name="role"
+            value="student"
+            onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="student">student</label>
+        </div>
         {error && (
           <div className="error-block">
             <p>There was an error submiting the form:</p>
             <p>{error.message}</p>
           </div>
         )}
-
         <button className="button__submit" type="submit">
           Submit
         </button>

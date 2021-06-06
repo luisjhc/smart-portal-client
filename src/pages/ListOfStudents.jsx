@@ -23,15 +23,23 @@ function ListOfStudents(props) {
   return (
     <div>
       <h1>LIST OF STUDENTS</h1>
-      {listOfStudents.map((student) => {
-        return (
-          <div key={student._id}>
+      {listOfStudents
+        .filter((student) => student.role === "student")
+        .map((filteredStudent) => (
+          <div key={filteredStudent._id}>
             <ul>
-              <li>{student.username}</li>
+              <li>
+                <h3>
+                  {filteredStudent.firstName} {filteredStudent.lastName}
+                </h3>
+                <ul>
+                  <li>User name: {filteredStudent.username}</li>
+                  <li>Email: {filteredStudent.email}</li>
+                </ul>
+              </li>
             </ul>
           </div>
-        );
-      })}
+        ))}
     </div>
   );
 }

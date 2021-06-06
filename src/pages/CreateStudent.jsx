@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import * as CONSTS from "../utils/consts";
 import axios from "axios";
 
-function CreateStudent({ authenticate }) {
+function CreateStudent() {
   const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
     email: "",
   });
 
-  const { username, password, email } = form;
+  const { firstName, lastName, username, password, email } = form;
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
@@ -21,6 +23,8 @@ function CreateStudent({ authenticate }) {
   function handleFormSubmission(event) {
     event.preventDefault();
     const credentials = {
+      firstName,
+      lastName,
       username,
       password,
       email,
@@ -42,8 +46,10 @@ function CreateStudent({ authenticate }) {
         });
       });
 
-    // to clear the form
+    // clear the form
     setForm({
+      firstName: "",
+      lastName: "",
       username: "",
       password: "",
       email: "",
@@ -54,6 +60,26 @@ function CreateStudent({ authenticate }) {
     <div>
       <h1>Create New Student</h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
+        <label htmlFor="input-firstName">First Name</label>
+        <input
+          id="input-firstName"
+          type="text"
+          name="firstName"
+          placeholder="firstName"
+          value={firstName}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="input-lastName">Last Name</label>
+        <input
+          id="input-lastName"
+          type="text"
+          name="lastName"
+          placeholder="lastName"
+          value={lastName}
+          onChange={handleInputChange}
+          required
+        />
         <label htmlFor="input-username">Username</label>
         <input
           id="input-username"
