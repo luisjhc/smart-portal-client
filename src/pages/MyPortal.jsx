@@ -23,21 +23,6 @@ function MyPortal(props) {
       });
   }, []);
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get(`${CONSTS.SERVER_URL}/myPortal/content`, {
-  //       headers: {
-  //         authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
-  //       },
-  //     })
-  //     .then((response) => {
-  //       setListOfHomework(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err.response);
-  //     });
-  // }, []);
-
   return (
     <div>
       {props.user.role === "teacher" ? (

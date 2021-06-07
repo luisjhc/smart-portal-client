@@ -43,6 +43,7 @@ function CreateStudent() {
         });
       })
       .catch((err) => {
+        console.log("err:", err);
         return setError({
           message: "There was an error creating the student! Please try again.",
         });
