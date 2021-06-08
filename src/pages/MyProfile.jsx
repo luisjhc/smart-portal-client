@@ -8,6 +8,9 @@ function MyProfile(props) {
   const [displayUpdatePassword, setDisplayUpdatePassword] =
     React.useState(false);
 
+  const [displayUpdateProfilePic, setDisplayUpdateProfilePic] =
+    React.useState(false);
+
   const { user, authenticate } = props;
 
   function profileToggle() {
@@ -15,6 +18,10 @@ function MyProfile(props) {
   }
   function passwordToggle() {
     setDisplayUpdatePassword(!displayUpdatePassword);
+  }
+
+  function profilePicToggle() {
+    setDisplayUpdateProfilePic(!displayUpdateProfilePic);
   }
 
   return (
@@ -31,21 +38,30 @@ function MyProfile(props) {
         alt={`Profile pic for ${user.username}`}
       />
 
+      {/* UPDATE PROFILE TOGGLES FORMS 👇 */}
       <div className="updates-toggle">
         <button onClick={profileToggle}>Update profile Form &#10549;</button>
         {displayUpdateProfile && (
           <UpdateProfile user={user} authenticate={authenticate} />
         )}
         <br />
+
         <button onClick={passwordToggle}>Update Password Form &#10549;</button>
         {displayUpdatePassword && <UpdatePassword />}
         <br />
-        <button>Delete Account</button>
+
+        <button onClick={profilePicToggle}>
+          Update Profile Picture Form &#10549;
+        </button>
+        {displayUpdateProfilePic && (
+          <UpdateProfilePic user={user} authenticate={authenticate} />
+        )}
       </div>
     </div>
   );
 }
 
+// UPDATE PROFILE 👇
 function UpdateProfile(props) {
   const { user, authenticate } = props;
   const [form, setForm] = React.useState({
@@ -125,6 +141,7 @@ function UpdateProfile(props) {
   );
 }
 
+// UPDATE PASSWORD 👇
 function UpdatePassword() {
   return (
     <form>
@@ -144,6 +161,52 @@ function UpdatePassword() {
       </div>
       <br />
       <button>Update Password &#10004;</button>
+    </form>
+  );
+}
+
+// UPDATE PROFILE PIC 👇
+function UpdateProfilePic(props) {
+  const { user, authenticate } = props;
+  const [chosenPicture, setChosenPicture] = React.useState(null);
+
+  function handleFormSubmission(event) {
+    event.preventDefault();
+
+    if (!chosenPicture) {
+      console.log(
+        "You need to pick an image before submitting the form, silly!"
+      );
+      return;
+    }
+
+    const formBody = new window.FormData();
+    formBody.append("profilePic", chosenPicture);
+
+    axios
+      .post(
+        `${CONSTS.SERVER_URL}/myProfile/uploadPicture/${user._id}`,
+        formBody
+      )
+      .then((res) => {
+        console.log(res);
+
+        authenticate({ ...user, profilePic: res.data.picFromServer });
+      })
+      .catch((err) => console.log(err.response));
+  }
+
+  function handleInputChange(event) {
+    console.log(event.target.files[0]);
+    const image = event.target.files[0];
+
+    setChosenPicture(image);
+  }
+
+  return (
+    <form onSubmit={handleFormSubmission}>
+      <input type="file" onChange={handleInputChange} />
+      <button type="submit">Upload Picture! </button>
     </form>
   );
 }
