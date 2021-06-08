@@ -37,7 +37,7 @@ function MyPortal(props) {
         </div>
       ) : (
         <div>
-          <h1>CLASSES</h1>
+          <h1>{props.user.level.toUpperCase()} CLASSES</h1>
           <div>
             {listOfContent
               .filter((content) => content.level === props.user.level)
@@ -46,9 +46,9 @@ function MyPortal(props) {
                   <Link to={`${PATHS.MYPORTAL}/${filteredContent._id}`}>
                     <h3>{filteredContent.title}</h3>
                   </Link>
-                  <Link to={PATHS.HOMEWORK}>
+                  {/* <Link to={PATHS.HOMEWORK}>
                     <h3>Homework for this class</h3>
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
           </div>

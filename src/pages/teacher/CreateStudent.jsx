@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as CONSTS from "../utils/consts";
+import * as CONSTS from "../../utils/consts";
 import axios from "axios";
 
 function CreateStudent() {
@@ -14,7 +14,7 @@ function CreateStudent() {
 
   const { firstName, lastName, username, password, email, level } = form;
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState("");
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -38,12 +38,13 @@ function CreateStudent() {
         },
       })
       .then((res) => {
-        return setSuccess({
-          message: `The student ${res.data.newUser.username} was created successfully.`,
-        });
+        setSuccess(res);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2500);
       })
       .catch((err) => {
-        console.log("err:", err);
+        console.log(err);
         return setError({
           message: "There was an error creating the student! Please try again.",
         });
@@ -148,7 +149,10 @@ function CreateStudent() {
 
         {success && (
           <div className="success-block">
-            <p>{success.message}</p>
+            <p>
+              The student {success.data.newUser.username} was created
+              successfully.
+            </p>
           </div>
         )}
         {error && (

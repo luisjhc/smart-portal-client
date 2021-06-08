@@ -9,9 +9,12 @@ import NormalRoute from "./routing-components/NormalRoute";
 import ProtectedRoute from "./routing-components/ProtectedRoute";
 import MyPortal from "./pages/MyPortal";
 import MyProfile from "./pages/MyProfile";
-import Content from "./pages/Content";
-import CreateStudent from "./pages/CreateStudent";
-import ListOfStudents from "./pages/ListOfStudents";
+import Content from "./pages/teacher/Content";
+import BeginnerContent from "./pages/teacher/BeginnerContent";
+import IntermediateContent from "./pages/teacher/IntermediateContent";
+import AdvancedContent from "./pages/teacher/AdvancedContent";
+import CreateStudent from "./pages/teacher/CreateStudent";
+import ListOfStudents from "./pages/teacher/ListOfStudents";
 import SingleClassPage from "./pages/SingleClassPage";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
@@ -96,6 +99,24 @@ export default function App() {
           exact
           path={PATHS.CONTENT}
           component={Content}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CONTENT_BEGINNER}
+          component={BeginnerContent}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CONTENT_INTERMEDIATE}
+          component={IntermediateContent}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.CONTENT_ADVANCED}
+          component={AdvancedContent}
           user={user}
         />
         <ProtectedRoute

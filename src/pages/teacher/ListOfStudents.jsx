@@ -1,12 +1,11 @@
 import React from "react";
 import axios from "axios";
-import * as CONSTS from "../utils/consts";
+import * as CONSTS from "../../utils/consts";
 
-function ListOfStudents(props) {
-  //console.log("props:", props);
+function ListOfStudents() {
   const [listOfStudents, setListOfStudents] = React.useState([]);
-  //const [student, setStudent] = React.useState([]);
-  const [success, setSuccess] = React.useState(null);
+  //const [student, setStudent] = React.useState(true);
+  const [success, setSuccess] = React.useState("");
 
   React.useEffect(() => {
     axios
@@ -32,7 +31,25 @@ function ListOfStudents(props) {
         },
       })
       .then((res) => {
+        //console.log("res:", res);
+        axios
+          .get(`${CONSTS.SERVER_URL}/myPortal/students`, {
+            headers: {
+              authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
+            },
+          })
+          .then((response) => {
+            setListOfStudents(response.data);
+          })
+          .catch((err) => {
+            console.log("err:", err);
+          });
+
         setSuccess(res);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2000);
+        //setStudent(false);
       })
       .catch((err) => {
         console.log("err:", err);
@@ -42,6 +59,11 @@ function ListOfStudents(props) {
   return (
     <div>
       <h1>LIST OF STUDENTS</h1>
+      {success && (
+        <div className="success-block">
+          <p>Student {success.data.student.username} has been deleted</p>
+        </div>
+      )}
       {listOfStudents
         .filter((student) => student.role === "student")
         .map((filteredStudent) => (
@@ -58,11 +80,6 @@ function ListOfStudents(props) {
                   <button onClick={() => handleDelete(filteredStudent._id)}>
                     Delete Student
                   </button>
-                  {success && (
-                    <div className="success-block">
-                      <p>{success.data.message}</p>
-                    </div>
-                  )}
                 </ul>
               </li>
             </ul>
