@@ -31,7 +31,6 @@ function ListOfStudents() {
         },
       })
       .then((res) => {
-        //console.log("res:", res);
         axios
           .get(`${CONSTS.SERVER_URL}/myPortal/students`, {
             headers: {

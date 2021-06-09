@@ -45,9 +45,12 @@ function CreateStudent() {
       })
       .catch((err) => {
         console.log(err);
-        return setError({
+        setError({
           message: "There was an error creating the student! Please try again.",
         });
+        setTimeout(() => {
+          setError("");
+        }, 2500);
       });
 
     // clear the form
