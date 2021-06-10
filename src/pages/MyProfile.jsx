@@ -1,6 +1,7 @@
 import React from "react";
-import axios from "axios";
-import * as CONSTS from "../utils/consts";
+import UpdateProfile from "../components/Profile/UpdateProfile";
+import UpdatePassword from "../components/Profile/UpdatePassword";
+import UpdateProfilePic from "../components/Profile/UpdateProfilePic";
 
 function MyProfile(props) {
   const [displayUpdateProfile, setDisplayUpdateProfile] = React.useState(false);
@@ -47,7 +48,9 @@ function MyProfile(props) {
         <br />
 
         <button onClick={passwordToggle}>Update Password Form &#10549;</button>
-        {displayUpdatePassword && <UpdatePassword />}
+        {displayUpdatePassword && (
+          <UpdatePassword user={user} authenticate={authenticate} />
+        )}
         <br />
 
         <button onClick={profilePicToggle}>
@@ -56,158 +59,10 @@ function MyProfile(props) {
         {displayUpdateProfilePic && (
           <UpdateProfilePic user={user} authenticate={authenticate} />
         )}
+        <br />
+        <button>Delete Account</button>
       </div>
     </div>
-  );
-}
-
-// UPDATE PROFILE 👇
-function UpdateProfile(props) {
-  const { user, authenticate } = props;
-  const [form, setForm] = React.useState({
-    firstName: user.firstName,
-    lastName: user.lastName,
-    username: user.username,
-    email: user.email,
-  });
-
-  function handleChange(event) {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const accessToken = localStorage.getItem(CONSTS.ACCESS_TOKEN);
-
-    axios
-      .put(`${CONSTS.SERVER_URL}/myProfile/update`, form, {
-        headers: {
-          authorization: accessToken,
-        },
-      })
-      .then((response) => {
-        console.log("response:", response);
-        authenticate(response.data.user);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>First Name</label>
-        <input
-          name="firstName"
-          placeholder="firstName"
-          value={form.firstName}
-          onChange={handleChange}
-        />
-      </div>
-      <br />
-      <div>
-        <label>Last Name</label>
-        <input
-          name="lastName"
-          placeholder="lastName"
-          value={form.lastName}
-          onChange={handleChange}
-        />
-      </div>
-      <br />
-      <div>
-        <label>Username</label>
-        <input
-          name="username"
-          placeholder="Username"
-          value={form.username}
-          onChange={handleChange}
-        />
-      </div>
-      <br />
-      <div>
-        <label>Email</label>
-        <input
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-        />
-      </div>
-      <br />
-      <button>Update Profile &#10004;</button>
-    </form>
-  );
-}
-
-// UPDATE PASSWORD 👇
-function UpdatePassword() {
-  return (
-    <form>
-      <div>
-        <label>Current Password</label>
-        <input name="password" placeholder="Current Password" />
-      </div>
-      <br />
-      <div>
-        <label>New Password</label>
-        <input name="password" placeholder="New Password" />
-      </div>
-      <br />
-      <div>
-        <label>Confirm New Password</label>
-        <input name="password" placeholder="Confirm New Password" />
-      </div>
-      <br />
-      <button>Update Password &#10004;</button>
-    </form>
-  );
-}
-
-// UPDATE PROFILE PIC 👇
-function UpdateProfilePic(props) {
-  const { user, authenticate } = props;
-  const [chosenPicture, setChosenPicture] = React.useState(null);
-
-  function handleFormSubmission(event) {
-    event.preventDefault();
-
-    if (!chosenPicture) {
-      console.log(
-        "You need to pick an image before submitting the form, silly!"
-      );
-      return;
-    }
-
-    const formBody = new window.FormData();
-    formBody.append("profilePic", chosenPicture);
-
-    axios
-      .post(
-        `${CONSTS.SERVER_URL}/myProfile/uploadPicture/${user._id}`,
-        formBody
-      )
-      .then((res) => {
-        console.log(res);
-
-        authenticate({ ...user, profilePic: res.data.picFromServer });
-      })
-      .catch((err) => console.log(err.response));
-  }
-
-  function handleInputChange(event) {
-    console.log(event.target.files[0]);
-    const image = event.target.files[0];
-
-    setChosenPicture(image);
-  }
-
-  return (
-    <form onSubmit={handleFormSubmission}>
-      <input type="file" onChange={handleInputChange} />
-      <button type="submit">Upload Picture! </button>
-    </form>
   );
 }
 
