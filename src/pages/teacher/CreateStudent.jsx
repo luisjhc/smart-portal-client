@@ -32,7 +32,7 @@ function CreateStudent() {
       level,
     };
     axios
-      .post(`${CONSTS.SERVER_URL}/myPortal/createStudent`, credentials, {
+      .post(`${CONSTS.SERVER_URL}/createStudent`, credentials, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
         },
@@ -45,9 +45,12 @@ function CreateStudent() {
       })
       .catch((err) => {
         console.log(err);
-        return setError({
+        setError({
           message: "There was an error creating the student! Please try again.",
         });
+        setTimeout(() => {
+          setError("");
+        }, 2500);
       });
 
     // clear the form

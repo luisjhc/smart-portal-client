@@ -4,18 +4,18 @@ import * as CONSTS from "../../utils/consts";
 
 function ListOfStudents() {
   const [listOfStudents, setListOfStudents] = React.useState([]);
-  //const [student, setStudent] = React.useState(true);
+
   const [success, setSuccess] = React.useState("");
 
   React.useEffect(() => {
     axios
-      .get(`${CONSTS.SERVER_URL}/myPortal/students`, {
+      .get(`${CONSTS.SERVER_URL}/listOfStudents`, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
         },
       })
       .then((response) => {
-        setListOfStudents(response.data);
+        return setListOfStudents(response.data);
       })
       .catch((err) => {
         console.log("err:", err);
@@ -25,34 +25,33 @@ function ListOfStudents() {
   function handleDelete(id) {
     //console.log("id:", id);
     axios
-      .get(`${CONSTS.SERVER_URL}/myPortal/students/:${id}`, {
+      .delete(`${CONSTS.SERVER_URL}/listOfStudents/${id}`, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
         },
       })
       .then((res) => {
-        //console.log("res:", res);
+        setSuccess(res);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2000);
+
         axios
-          .get(`${CONSTS.SERVER_URL}/myPortal/students`, {
+          .get(`${CONSTS.SERVER_URL}/listOfStudents`, {
             headers: {
               authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
             },
           })
           .then((response) => {
+            console.log("response:", response);
             setListOfStudents(response.data);
           })
           .catch((err) => {
-            console.log("err:", err);
+            console.log("err:", err.response);
           });
-
-        setSuccess(res);
-        setTimeout(() => {
-          setSuccess("");
-        }, 2000);
-        //setStudent(false);
       })
       .catch((err) => {
-        console.log("err:", err);
+        console.log("err:", err.response);
       });
   }
 

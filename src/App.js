@@ -16,6 +16,7 @@ import AdvancedContent from "./pages/teacher/AdvancedContent";
 import CreateStudent from "./pages/teacher/CreateStudent";
 import ListOfStudents from "./pages/teacher/ListOfStudents";
 import SingleClassPage from "./pages/SingleClassPage";
+import Exercises from "./pages/Exercises";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import * as CONSTS from "./utils/consts";
@@ -138,6 +139,13 @@ export default function App() {
           path={PATHS.CLASS}
           authenticate={authenticate}
           component={SingleClassPage}
+          user={user}
+        />
+        <ProtectedRoute
+          exact
+          path={PATHS.EXERCISES}
+          authenticate={authenticate}
+          component={Exercises}
           user={user}
         />
       </Switch>
