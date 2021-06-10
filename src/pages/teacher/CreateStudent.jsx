@@ -32,7 +32,7 @@ function CreateStudent() {
       level,
     };
     axios
-      .post(`${CONSTS.SERVER_URL}/myPortal/createStudent`, credentials, {
+      .post(`${CONSTS.SERVER_URL}/createStudent`, credentials, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
         },

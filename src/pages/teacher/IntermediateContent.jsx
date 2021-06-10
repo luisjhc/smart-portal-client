@@ -4,14 +4,15 @@ import * as CONSTS from "../../utils/consts";
 import * as PATHS from "../../utils/paths";
 import { Link } from "react-router-dom";
 
-function IntermediateContent() {
+function IntermediateContent(props) {
   //const { user } = props;
   //console.log(props);
   const [listOfContent, setListOfContent] = React.useState([]);
+  const [listOfExercises, setListOfExercises] = React.useState([]);
 
   React.useEffect(() => {
     axios
-      .get(`${CONSTS.SERVER_URL}/myPortal/content`, {
+      .get(`${CONSTS.SERVER_URL}/myPortal`, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
         },
@@ -21,6 +22,22 @@ function IntermediateContent() {
       })
       .catch((err) => {
         console.error(err.response);
+      });
+  }, []);
+
+  React.useEffect(() => {
+    axios
+      .get(`${CONSTS.SERVER_URL}/myPortal/exercises`, {
+        headers: {
+          authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
+        },
+      })
+      .then((response) => {
+        //console.log("response:", response);
+        setListOfExercises(response.data);
+      })
+      .catch((err) => {
+        console.log("err:", err);
       });
   }, []);
 
@@ -35,9 +52,17 @@ function IntermediateContent() {
               <Link to={`${PATHS.MYPORTAL}/${filteredContent._id}`}>
                 <h3>{filteredContent.title}</h3>
               </Link>
-              {/* <Link to={PATHS.HOMEWORK}>
-                <h3>Homework for this class</h3>
-              </Link> */}
+              {listOfExercises
+                .filter(
+                  (exercises) =>
+                    exercises.level === props.user.level &&
+                    filteredContent.title === exercises.title
+                )
+                .map((filteredExercises) => (
+                  <Link to={`${PATHS.EXERCISES}/${filteredExercises._id}`}>
+                    <h3>Exercises for this class</h3>
+                  </Link>
+                ))}
             </div>
           ))}
       </div>
