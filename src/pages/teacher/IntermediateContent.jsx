@@ -52,17 +52,9 @@ function IntermediateContent(props) {
               <Link to={`${PATHS.MYPORTAL}/${filteredContent._id}`}>
                 <h3>{filteredContent.title}</h3>
               </Link>
-              {listOfExercises
-                .filter(
-                  (exercises) =>
-                    exercises.level === props.user.level &&
-                    filteredContent.title === exercises.title
-                )
-                .map((filteredExercises) => (
-                  <Link to={`${PATHS.EXERCISES}/${filteredExercises._id}`}>
-                    <h3>Exercises for this class</h3>
-                  </Link>
-                ))}
+              <Link to={`${PATHS.MYPORTAL}/exercise/${filteredContent._id}`}>
+                <h3>Exercises for this class</h3>
+              </Link>
             </div>
           ))}
       </div>

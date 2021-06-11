@@ -59,8 +59,6 @@ function MyProfile(props) {
         {displayUpdateProfilePic && (
           <UpdateProfilePic user={user} authenticate={authenticate} />
         )}
-        <br />
-        <button>Delete Account</button>
       </div>
     </div>
   );

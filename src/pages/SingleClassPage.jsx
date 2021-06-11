@@ -27,8 +27,18 @@ function SingleClassPage(props) {
   return (
     <div>
       <h1>{singleClass.title}</h1>
-      <ReactMarkdown>{singleClass.text}</ReactMarkdown>
-      <ReactPlayer url={singleClass.video} controls />
+      {singleClass.image ? (
+        <div>
+          <img src={singleClass.image} alt="types of questions" />
+          <ReactMarkdown>{singleClass.text}</ReactMarkdown>
+          <ReactPlayer url={singleClass.video} controls />
+        </div>
+      ) : (
+        <div>
+          <ReactMarkdown>{singleClass.text}</ReactMarkdown>
+          <ReactPlayer url={singleClass.video} controls />
+        </div>
+      )}
     </div>
   );
 }

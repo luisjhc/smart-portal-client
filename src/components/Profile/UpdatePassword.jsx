@@ -4,7 +4,8 @@ import axios from "axios";
 
 // UPDATE PASSWORD 👇
 function UpdatePassword(props) {
-  const { user, authenticate } = props;
+  const { authenticate } = props;
+  //const { user, authenticate } = props;
 
   const [form, setForm] = React.useState({
     // currentPassword: user.password,

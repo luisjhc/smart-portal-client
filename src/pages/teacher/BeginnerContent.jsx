@@ -35,9 +35,9 @@ function BeginnerContent() {
               <Link to={`${PATHS.MYPORTAL}/${filteredContent._id}`}>
                 <h3>{filteredContent.title}</h3>
               </Link>
-              {/* <Link to={PATHS.HOMEWORK}>
-                <h3>Homework for this class</h3>
-              </Link> */}
+              <Link to={`${PATHS.MYPORTAL}/exercise/${filteredContent._id}`}>
+                <h3>Exercises for this class</h3>
+              </Link>
             </div>
           ))}
       </div>
