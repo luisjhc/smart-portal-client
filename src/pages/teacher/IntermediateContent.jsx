@@ -8,7 +8,7 @@ function IntermediateContent(props) {
   //const { user } = props;
   //console.log(props);
   const [listOfContent, setListOfContent] = React.useState([]);
-  const [listOfExercises, setListOfExercises] = React.useState([]);
+  // const [listOfExercises, setListOfExercises] = React.useState([]);
 
   React.useEffect(() => {
     axios
@@ -34,7 +34,7 @@ function IntermediateContent(props) {
       })
       .then((response) => {
         //console.log("response:", response);
-        setListOfExercises(response.data);
+        setListOfContent(response.data);
       })
       .catch((err) => {
         console.log("err:", err);
