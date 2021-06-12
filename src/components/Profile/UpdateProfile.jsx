@@ -88,6 +88,7 @@ function UpdateProfile(props) {
         />
       </div>
       <br />
+
       {success && (
         <div className="success-block">
           <p>{success}</p>
