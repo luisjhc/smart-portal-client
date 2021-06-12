@@ -2,6 +2,7 @@ import React from "react";
 import UpdateProfile from "../components/Profile/UpdateProfile";
 import UpdatePassword from "../components/Profile/UpdatePassword";
 import UpdateProfilePic from "../components/Profile/UpdateProfilePic";
+import "../pages/pagesCss/MyProfile.css";
 
 function MyProfile(props) {
   const [displayUpdateProfile, setDisplayUpdateProfile] = React.useState(false);
@@ -26,7 +27,7 @@ function MyProfile(props) {
   }
 
   return (
-    <div>
+    <div className="profile-container">
       <h1>Hello, {user.username} &#9996;</h1>
       <h2>
         <i>

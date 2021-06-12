@@ -1,0 +1,41 @@
+/* Color Palette 👇 */
+/* ● Seashell -> #FFF0EB(HEX);
+  -> rgb(255, 240, 235);
+  ● New York Pink -> #E5958E(HEX);
+  -> rgb (229, 149, 142);
+  ● Vivid Tangerine -> #FDB095(HEX);
+  -> rgb (253, 176, 149);
+  ● Russian Violet -> #210440(HEX);
+  -> rgb (33, 4, 64);
+  ● Blue Munsell -> #028BA3(HEX);
+  -> rgb (2, 139, 163);
+  ● Selective Yellow -> #FFBA00(HEX);
+  -> rgb (255, 186, 0);
+  */
+
+body {
+  background-color: rgb(255, 240, 235);
+}
+
+.profile-container {
+  color: #210440;
+}
+
+.updates-toggle > button {
+  background-color: #028ba3;
+  color: #fff0eb;
+  font-size: 1em;
+  font-weight: bolder;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 #63c6d8;
+  cursor: pointer;
+  margin: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.updates-toggle > button:hover {
+  transform: scale(1.05);
+  background-color: #ffba00;
+}
