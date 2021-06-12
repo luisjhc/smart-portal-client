@@ -70,7 +70,7 @@ function UpdateProfilePic(props) {
         </div>
       )}
 
-      <button type="submit">Upload Picture! </button>
+      <button type="submit">Upload Picture 📸 </button>
     </form>
   );
 }

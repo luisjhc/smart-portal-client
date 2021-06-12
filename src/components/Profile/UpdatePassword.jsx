@@ -1,6 +1,5 @@
 import React from "react";
 import * as CONSTS from "../../utils/consts";
-import * as PATHS from "../../utils/paths";
 import axios from "axios";
 
 // UPDATE PASSWORD 👇
@@ -98,7 +97,7 @@ function UpdatePassword(props) {
           <p>{error} 😱</p>
         </div>
       )}
-      <button>Update Password &#10004;</button>
+      <button>Update Password 🗝</button>
     </form>
   );
 }
