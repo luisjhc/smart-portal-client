@@ -1,11 +1,14 @@
 import React from "react";
 import * as CONSTS from "../../utils/consts";
+
 import axios from "axios";
 
 // UPDATE PROFILE PIC 👇
 function UpdateProfilePic(props) {
   const { user, authenticate } = props;
   const [chosenPicture, setChosenPicture] = React.useState(null);
+  const [success, setSuccess] = React.useState("");
+  const [error, setError] = React.useState(null);
 
   function handleFormSubmission(event) {
     event.preventDefault();
@@ -25,12 +28,24 @@ function UpdateProfilePic(props) {
         `${CONSTS.SERVER_URL}/myProfile/uploadPicture/${user._id}`,
         formBody
       )
-      .then((res) => {
-        console.log(res);
+      .then((response) => {
+        console.log(response);
 
-        authenticate({ ...user, profilePic: res.data.picFromServer });
+        authenticate({ ...user, profilePic: response.data.picFromServer });
+
+        setSuccess(response.data.message);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2500);
       })
-      .catch((err) => console.log(err.response));
+      .catch((err) => {
+        console.error(err.response);
+
+        setError(err.response.data.errorMessage);
+        setTimeout(() => {
+          setError("");
+        }, 2500);
+      });
   }
 
   function handleInputChange(event) {
@@ -43,6 +58,18 @@ function UpdateProfilePic(props) {
   return (
     <form onSubmit={handleFormSubmission}>
       <input type="file" onChange={handleInputChange} />
+      <br />
+      {success && (
+        <div className="success-block">
+          <p>{success}</p>
+        </div>
+      )}
+      {error && (
+        <div className="error-block">
+          <p>{error}</p>
+        </div>
+      )}
+
       <button type="submit">Upload Picture! </button>
     </form>
   );

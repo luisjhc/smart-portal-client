@@ -1,5 +1,6 @@
 import React from "react";
 import * as CONSTS from "../../utils/consts";
+
 import axios from "axios";
 
 function UpdateProfile(props) {
@@ -10,6 +11,8 @@ function UpdateProfile(props) {
     username: user.username,
     email: user.email,
   });
+  const [success, setSuccess] = React.useState("");
+  const [error, setError] = React.useState(null);
 
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -28,9 +31,18 @@ function UpdateProfile(props) {
       .then((response) => {
         console.log("response:", response);
         authenticate(response.data.user);
+        setSuccess(response.data.message);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2500);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(err.response);
+
+        setError(err.response.data.errorMessage);
+        setTimeout(() => {
+          setError("");
+        }, 2500);
       });
   }
 
@@ -76,6 +88,18 @@ function UpdateProfile(props) {
         />
       </div>
       <br />
+
+      {success && (
+        <div className="success-block">
+          <p>{success}</p>
+        </div>
+      )}
+      {error && (
+        <div className="error-block">
+          <p>{error}</p>
+        </div>
+      )}
+
       <button>Update Profile &#10004;</button>
     </form>
   );
