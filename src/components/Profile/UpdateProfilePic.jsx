@@ -1,5 +1,6 @@
 import React from "react";
 import * as CONSTS from "../../utils/consts";
+import * as PATHS from "../../utils/paths";
 import axios from "axios";
 
 // UPDATE PROFILE PIC 👇
