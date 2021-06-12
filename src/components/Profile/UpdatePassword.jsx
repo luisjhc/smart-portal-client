@@ -6,6 +6,8 @@ import axios from "axios";
 function UpdatePassword(props) {
   const { authenticate } = props;
   //const { user, authenticate } = props;
+  const [error, setError] = React.useState("");
+  const [success, setSuccess] = React.useState("");
 
   const [form, setForm] = React.useState({
     // currentPassword: user.password,
@@ -29,11 +31,24 @@ function UpdatePassword(props) {
         },
       })
       .then((response) => {
-        console.log("response:", response);
+        //console.log("response:", response);
         authenticate(response.data.user);
+        setSuccess(response.data.message);
+        setTimeout(() => {
+          setSuccess("");
+        }, 2500);
+        setForm({
+          currentPassword: "",
+          newPassword: "",
+          confirmPassword: "",
+        });
       })
       .catch((err) => {
-        console.error(err.response);
+        console.error(err.response.data.errorMessage);
+        setError(err.response.data.errorMessage);
+        setTimeout(() => {
+          setError("");
+        }, 2500);
       });
   }
 
@@ -72,6 +87,16 @@ function UpdatePassword(props) {
         />
       </div>
       <br />
+      {success && (
+        <div className="success-block">
+          <p>{success}</p>
+        </div>
+      )}
+      {error && (
+        <div className="error-block">
+          <p>{error} 😱</p>
+        </div>
+      )}
       <button>Update Password &#10004;</button>
     </form>
   );

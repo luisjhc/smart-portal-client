@@ -29,9 +29,9 @@ function AudioExercise(props) {
       });
   }, [props.match.params.exercise]);
 
-  React.useEffect(() => {
-    console.log("exercises:", exercises);
-  }, [exercises]);
+  // React.useEffect(() => {
+  //   console.log("exercises:", exercises);
+  // }, [exercises]);
 
   function resetQuiz() {
     setScore(0);
@@ -59,7 +59,12 @@ function AudioExercise(props) {
       ) : (
         <div>
           <h1>LISTENING QUIZ</h1>
-          <ReactPlayer url={exercises.audioSource} controls />
+          {/* {console.log(exercises.audioSource.includes("mp3"))} */}
+          {exercises.audioSource.includes("mp3") ? (
+            <ReactPlayer url={exercises.audioSource} height="50px" controls />
+          ) : (
+            <ReactPlayer url={exercises.audioSource} controls />
+          )}
           {showScore ? (
             <div className="score-section">
               <div>

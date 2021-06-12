@@ -13,7 +13,7 @@ function CreateStudent() {
   });
 
   const { firstName, lastName, username, password, email, level } = form;
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   function handleInputChange(event) {
@@ -38,16 +38,15 @@ function CreateStudent() {
         },
       })
       .then((res) => {
-        setSuccess(res);
+        setSuccess(`The student ${res.data.newUser} was created
+        successfully!. 🥳`);
         setTimeout(() => {
           setSuccess("");
         }, 2500);
       })
       .catch((err) => {
         console.log(err);
-        setError({
-          message: "There was an error creating the student! Please try again.",
-        });
+        setError(err.response.data.errorMessage);
         setTimeout(() => {
           setError("");
         }, 2500);
@@ -149,21 +148,16 @@ function CreateStudent() {
           />
           <label htmlFor="advanced">advanced</label>
         </div>
-
         {success && (
           <div className="success-block">
-            <p>
-              The student {success.data.newUser.username} was created
-              successfully.
-            </p>
+            <p>{success}</p>
           </div>
         )}
         {error && (
           <div className="error-block">
-            <p>{error.message}</p>
+            <p>{error} 😱</p>
           </div>
         )}
-
         <button className="button__submit" type="submit">
           Submit
         </button>
