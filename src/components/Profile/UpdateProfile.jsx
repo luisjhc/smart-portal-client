@@ -100,7 +100,7 @@ function UpdateProfile(props) {
         </div>
       )}
 
-      <button>Update Profile &#10004;</button>
+      <button>Update Profile 👤</button>
     </form>
   );
 }
