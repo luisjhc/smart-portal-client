@@ -1,23 +1,15 @@
-import logo from "../logo.svg";
-import "../App.css";
+import "./pagesCss/HomePage.css";
 
 function HomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <video autoPlay loop muted>
+        <source
+          src="https://res.cloudinary.com/dertdncse/video/upload/v1623507603/smart%20portal/videos/london_edited_s7bg9n.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <p>SMART PORTAL</p>
     </div>
   );
 }
