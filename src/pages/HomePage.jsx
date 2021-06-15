@@ -2,9 +2,9 @@ import "./pagesCss/HomePage.css";
 
 function HomePage() {
   return (
-    <div className="main">
+    <div className="homePage-mainContainer">
       <p data-text="Welcome to...">Welcome to...</p>
-      <div className="wrapper">
+      <div className="homePage-videoWrapper">
         <video autoPlay loop muted>
           <source
             src="https://res.cloudinary.com/dgmm3pkuc/video/upload/v1623777768/react-smart-portal/British_Flag_Waving_HD_ie8lyx.mp4"

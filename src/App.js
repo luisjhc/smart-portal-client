@@ -69,6 +69,11 @@ export default function App() {
   }
   return (
     <div className="App">
+      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+        rel="stylesheet"
+      ></link>
       <Navbar handleLogout={handleLogout} user={user} />
       <Switch>
         <NormalRoute exact path={PATHS.HOMEPAGE} component={HomePage} />
