@@ -43,7 +43,7 @@ function MyProfile(props) {
 
       {/* UPDATE PROFILE TOGGLES FORMS 👇 */}
       <div className="profile-updates-toggle">
-        <button onClick={profileToggle}>Update profile Form &#10549;</button>
+        <button onClick={profileToggle}>Update Profile Form &#10549;</button>
         {displayUpdateProfile && (
           <UpdateProfile user={user} authenticate={authenticate} />
         )}

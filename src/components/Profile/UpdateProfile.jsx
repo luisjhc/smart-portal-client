@@ -58,7 +58,7 @@ function UpdateProfile(props) {
         />
       </div>
       <br />
-      <div>
+      <div className="profile-update-form">
         <label>Last Name</label>
         <input
           name="lastName"
@@ -68,7 +68,7 @@ function UpdateProfile(props) {
         />
       </div>
       <br />
-      <div>
+      <div className="profile-update-form">
         <label>Username</label>
         <input
           name="username"
@@ -78,7 +78,7 @@ function UpdateProfile(props) {
         />
       </div>
       <br />
-      <div>
+      <div className="profile-update-form">
         <label>Email</label>
         <input
           name="email"
@@ -100,7 +100,7 @@ function UpdateProfile(props) {
         </div>
       )}
 
-      <button>Update Profile 👤</button>
+      <button className="profile-update-form-btn">Update Profile 👤</button>
     </form>
   );
 }

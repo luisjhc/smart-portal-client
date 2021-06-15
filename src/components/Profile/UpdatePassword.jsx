@@ -1,6 +1,7 @@
 import React from "react";
 import * as CONSTS from "../../utils/consts";
 import axios from "axios";
+import "../../pages/pagesCss/MyProfile.css";
 
 // UPDATE PASSWORD 👇
 function UpdatePassword(props) {
@@ -65,7 +66,7 @@ function UpdatePassword(props) {
         />
       </div>
       <br />
-      <div>
+      <div className="profile-update-password-form">
         <label>New Password</label>
         <input
           name="newPassword"
@@ -76,7 +77,7 @@ function UpdatePassword(props) {
         />
       </div>
       <br />
-      <div>
+      <div className="profile-update-password-form">
         <label>Confirm New Password</label>
         <input
           name="confirmPassword"
@@ -97,7 +98,7 @@ function UpdatePassword(props) {
           <p>{error} 😱</p>
         </div>
       )}
-      <button>Update Password 🗝</button>
+      <button className="update-password-form-btn">Update Password 🗝</button>
     </form>
   );
 }
