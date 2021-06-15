@@ -48,7 +48,7 @@ function UpdateProfile(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="profile-update-form">
         <label>First Name</label>
         <input
           name="firstName"

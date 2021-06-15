@@ -27,7 +27,7 @@ function MyProfile(props) {
   }
 
   return (
-    <div className="profile-container">
+    <div className="profile-main-container">
       <h1>Hello, {user.username} &#9996;</h1>
       <h2>
         <i>
@@ -35,13 +35,14 @@ function MyProfile(props) {
         </i>
       </h2>
       <img
+        className="profile-main-container-img"
         src={user.profilePic}
         width="200px"
         alt={`Profile pic for ${user.username}`}
       />
 
       {/* UPDATE PROFILE TOGGLES FORMS 👇 */}
-      <div className="updates-toggle">
+      <div className="profile-updates-toggle">
         <button onClick={profileToggle}>Update profile Form &#10549;</button>
         {displayUpdateProfile && (
           <UpdateProfile user={user} authenticate={authenticate} />

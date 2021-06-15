@@ -54,7 +54,7 @@ function UpdatePassword(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="profile-update-password-form">
         <label>Current Password</label>
         <input
           name="currentPassword"

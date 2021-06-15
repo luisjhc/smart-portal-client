@@ -57,7 +57,10 @@ function UpdateProfilePic(props) {
 
   return (
     <form onSubmit={handleFormSubmission}>
-      <input type="file" onChange={handleInputChange} />
+      <div className="profile-update-pic-form">
+        <input type="file" onChange={handleInputChange} />
+      </div>
+
       <br />
       {success && (
         <div className="success-block">
