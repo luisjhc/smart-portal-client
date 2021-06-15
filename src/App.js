@@ -20,6 +20,7 @@ import Exercises from "./pages/Exercises";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import * as CONSTS from "./utils/consts";
+import "../src/App.css";
 
 export default function App() {
   const [user, setUser] = useState(null);

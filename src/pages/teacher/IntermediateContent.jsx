@@ -27,9 +27,10 @@ function IntermediateContent(props) {
 
   React.useEffect(() => {
     axios
-      .get(`${CONSTS.SERVER_URL}/myPortal/exercises`, {
+      .get(`${CONSTS.SERVER_URL}/myPortal`, {
         headers: {
           authorization: localStorage.getItem(CONSTS.ACCESS_TOKEN),
+          moms: "Toby is a hist hole",
         },
       })
       .then((response) => {

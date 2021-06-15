@@ -1,15 +1,42 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  font-weight: bold;
-  background-color: #fff0eb;
+/* Color Palette 👇 */
+/* ● Seashell -> #FFF0EB(HEX);
+  -> rgb(255, 240, 235);
+  ● New York Pink -> #E5958E(HEX);
+  -> rgb (229, 149, 142);
+  ● Vivid Tangerine -> #FDB095(HEX);
+  -> rgb (253, 176, 149);
+  ● Russian Violet -> #210440(HEX);
+  -> rgb (33, 4, 64);
+  ● Blue Munsell -> #028BA3(HEX);
+  -> rgb (2, 139, 163);
+  ● Selective Yellow -> #FFBA00(HEX);
+  -> rgb (255, 186, 0);
+  */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 30px;
+  margin-bottom: 0px;
+  width: 200px;
 }
 
 .wrapper {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial Black";
+  font-weight: bold;
+  background-color: white;
+  text-align: center;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 520px;
   overflow: hidden;
 }
 
@@ -21,7 +48,7 @@ body {
   height: 100%;
 }
 
-.wrapper p {
+.wrapper h1 {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -29,5 +56,4 @@ body {
   text-align: center;
   mix-blend-mode: screen;
   font-size: 200px;
-  font-weight: 1000;
 }
