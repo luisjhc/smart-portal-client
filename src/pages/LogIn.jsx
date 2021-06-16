@@ -36,7 +36,7 @@ export default function LogIn({ authenticate, history }) {
   }
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Log In</h1>
       <form onSubmit={handleFormSubmission} className="signup__form">
         <label htmlFor="input-username">Username</label>
