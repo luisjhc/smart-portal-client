@@ -23,10 +23,9 @@
   text-align: center;
   justify-content: center;
   place-items: center;
-  width: 30em;
-  height: 50em;
+  width: 40em;
+  height: 60em;
   border-radius: 20px;
-
   margin: 1.5em 1.5em auto 1.5em;
   box-sizing: border-box;
   background: #ecf0f3;
@@ -56,4 +55,119 @@
 .profile-updates-toggle > button:hover {
   transform: scale(1.05);
   background-color: #ffba00;
+}
+
+/* Update Password Form 👇 */
+
+.profile-update-password-form > input {
+  margin-left: 1em;
+  background: #ecf0f3;
+  padding: 1em;
+  padding-left: 1.5em;
+  height: 3em;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.profile-update-password-form > label {
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.profile-update-password-form > label,
+input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.update-password-form-btn {
+  /* margin-top: 20px; */
+  background: #ffba00;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.update-password-form-btn:hover {
+  box-shadow: none;
+}
+
+/* Update Profile Form 👇 */
+
+.profile-update-form > input {
+  margin-left: 1em;
+  background: #ecf0f3;
+  padding: 1em;
+  padding-left: 1.5em;
+  height: 3em;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.profile-update-form-btn {
+  background: #ffba00;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.profile-update-form-btn:hover {
+  box-shadow: none;
+}
+
+/* Update Profile Pic Form👇 */
+
+.profile-update-pic-form > input {
+  margin-left: 1em;
+  background: #ecf0f3;
+  padding: 1em;
+  padding-left: 1.5em;
+  height: 3em;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.update-pic-form-btn {
+  background: #ffba00;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.update-pic-form-btn:hover {
+  box-shadow: none;
 }

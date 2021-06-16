@@ -23,7 +23,9 @@ nav {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  margin: 10px;
+  margin: 0.5em;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px white;
 }
 
 .authLink {

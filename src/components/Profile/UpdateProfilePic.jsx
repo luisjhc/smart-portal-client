@@ -73,7 +73,9 @@ function UpdateProfilePic(props) {
         </div>
       )}
 
-      <button type="submit">Upload Picture 📸 </button>
+      <button className="update-pic-form-btn" type="submit">
+        Upload Picture 📸{" "}
+      </button>
     </form>
   );
 }
