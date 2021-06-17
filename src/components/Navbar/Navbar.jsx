@@ -20,7 +20,7 @@ const Navbar = (props) => {
               />
               <h3>Welcome {user.username}</h3>
             </div>
-            <Link to={PATHS.MYPORTAL} className="nav__projectName">
+            <Link to={PATHS.MYPORTAL} className="nav-myPortal">
               &#127891; My Portal
             </Link>
             {/* <Link to={PATHS.PROTECTEDPAGE} className="authLink">

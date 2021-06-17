@@ -22,8 +22,9 @@
 }
 
 .homePage-mainContainer p {
-  /* font-family: "S", cursive, sans-serif; */
   font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 2px;
   margin-bottom: 0px;
   width: 200px;
   animation: slide 1s;
@@ -49,6 +50,18 @@
   width: 1000px;
   height: 520px;
   overflow: hidden;
+  /* opacity: 0; */
+  animation: fadeIn 3s;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .homePage-videoWrapper video {

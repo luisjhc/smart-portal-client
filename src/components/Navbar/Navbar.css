@@ -4,10 +4,12 @@ nav {
   justify-content: space-around;
   flex-wrap: wrap;
   background: #210440;
-  font-weight: 600;
+  /* font-weight: bold; */
+  font-size: large;
+  letter-spacing: 2px;
 }
 
-.nav__projectName {
+.nav-myPortal {
   color: #fff0eb;
   text-decoration: none;
 }
@@ -27,7 +29,7 @@ nav {
 }
 
 .authLink {
-  color: #61dafb;
+  color: #e5958e;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
@@ -37,7 +39,7 @@ nav {
 }
 
 .authLink:hover {
-  color: #ffffff;
+  color: #fff0eb;
 }
 
 .nav-profile-link {
