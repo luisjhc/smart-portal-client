@@ -22,11 +22,11 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  place-items: center;
+  /* place-items: center; */
   width: 40em;
-  height: 60em;
+  min-height: 60em;
   border-radius: 20px;
-  margin: 1.5em 1.5em auto 1.5em;
+  margin: 1.5rem auto;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 10px 10px 15px #cbced1, -10px -10px 15px white;
