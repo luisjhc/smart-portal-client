@@ -13,18 +13,28 @@
   -> rgb (255, 186, 0);
   */
 
+.nav-loggedOut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #210440;
+  font-size: large;
+  letter-spacing: 2px;
+}
+
 .nav-container {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-gap: 1em;
   place-items: center center;
-  padding: 1em;
+  padding: 0.5em;
   /* justify-content: space-around;
   flex-wrap: wrap; */
   background: #210440;
   /* font-weight: bold; */
-  font-size: large;
+  font-size: larger;
   letter-spacing: 2px;
+  /* height: 60px; */
 }
 
 .nav-myPortal {
@@ -42,8 +52,9 @@
   align-items: center;
 }
 
-.nav-userGreeting h3 {
+.nav-userGreeting p {
   margin-left: 0.5em;
+  font-size: 30px;
 }
 
 .nav-userGreeting-img {
@@ -59,6 +70,7 @@
   color: #fff0eb;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+  font-size: 25px;
 }
 
 .nav-authLink + .nav-authLink {
@@ -93,6 +105,7 @@
   transition: all 0.2s ease-in-out;
   position: sticky;
   top: 0;
+  font-size: 20px;
 }
 
 .nav-logout-btn:hover {
