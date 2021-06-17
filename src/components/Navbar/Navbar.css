@@ -1,8 +1,26 @@
-nav {
-  display: flex;
+/* Color Palette 👇 */
+/* ● Seashell -> #FFF0EB(HEX);
+  -> rgb(255, 240, 235);
+  ● New York Pink -> #E5958E(HEX);
+  -> rgb (229, 149, 142);
+  ● Vivid Tangerine -> #FDB095(HEX);
+  -> rgb (253, 176, 149);
+  ● Russian Violet -> #210440(HEX);
+  -> rgb (33, 4, 64);
+  ● Blue Munsell -> #028BA3(HEX);
+  -> rgb (2, 139, 163);
+  ● Selective Yellow -> #FFBA00(HEX);
+  -> rgb (255, 186, 0);
+  */
+
+.nav-container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-gap: 1em;
+  place-items: center center;
   padding: 1em;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  /* justify-content: space-around;
+  flex-wrap: wrap; */
   background: #210440;
   /* font-weight: bold; */
   font-size: large;
@@ -14,9 +32,18 @@ nav {
   text-decoration: none;
 }
 
+.nav-myPortal:hover {
+  color: #ffba00;
+}
+
 .nav-userGreeting {
   color: #fff0eb;
   display: flex;
+  align-items: center;
+}
+
+.nav-userGreeting h3 {
+  margin-left: 0.5em;
 }
 
 .nav-userGreeting-img {
@@ -28,18 +55,18 @@ nav {
   box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px white;
 }
 
-.authLink {
-  color: #e5958e;
+.nav-authLink {
+  color: #fff0eb;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
-.authLink + .authLink {
+.nav-authLink + .nav-authLink {
   padding: 1em;
 }
 
-.authLink:hover {
-  color: #fff0eb;
+.nav-authLink:hover {
+  color: #ffba00;
 }
 
 .nav-profile-link {
@@ -48,7 +75,11 @@ nav {
   margin-left: 1em;
 }
 
-.nav-logoutbtn {
+.nav-profile-link:hover {
+  color: #ffba00;
+}
+
+.nav-logout-btn {
   font-family: inherit;
   font-weight: inherit;
   padding: 0.5em 1em;
@@ -64,7 +95,7 @@ nav {
   top: 0;
 }
 
-.nav-logoutbtn:hover {
+.nav-logout-btn:hover {
   transform: scale(1.05);
   background-color: #ffba00;
 }
