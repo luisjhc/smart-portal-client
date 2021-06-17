@@ -75,7 +75,9 @@
 
 .profile-update-password-form > label {
   margin-bottom: 4px;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bolder;
+  letter-spacing: 1px;
 }
 
 .profile-update-password-form > label,
@@ -111,6 +113,12 @@ input {
 
 /* Update Profile Form 👇 */
 
+.profile-update-form > label {
+  font-size: 18px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
 .profile-update-form > input {
   margin-left: 1em;
   background: #ecf0f3;

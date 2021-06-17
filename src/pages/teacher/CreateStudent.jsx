@@ -119,8 +119,9 @@ function CreateStudent() {
           onChange={handleInputChange}
           required
         />
+
         <label htmlFor="input-level">Level:</label>
-        <div>
+        <div className="create-student-radion-btn">
           <input
             id="beginner"
             type="radio"
@@ -140,7 +141,6 @@ function CreateStudent() {
           />
           <label htmlFor="intermediate">intermediate</label>
           <input
-            className="create-student-radion-btn"
             id="advanced"
             type="radio"
             name="level"

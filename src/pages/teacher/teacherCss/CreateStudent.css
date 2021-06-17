@@ -21,6 +21,10 @@
   margin: 1.5rem auto;
 }
 
+.create-student-form > label {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
 .create-student-form > input {
   margin-left: 1em;
   background: #ecf0f3;
