@@ -1,0 +1,58 @@
+/* Color Palette 👇 */
+/* ● Seashell -> #FFF0EB(HEX);
+  -> rgb(255, 240, 235);
+  ● New York Pink -> #E5958E(HEX);
+  -> rgb (229, 149, 142);
+  ● Vivid Tangerine -> #FDB095(HEX);
+  -> rgb (253, 176, 149);
+  ● Russian Violet -> #210440(HEX);
+  -> rgb (33, 4, 64);
+  ● Blue Munsell -> #028BA3(HEX);
+  -> rgb (2, 139, 163);
+  ● Selective Yellow -> #FFBA00(HEX);
+  -> rgb (255, 186, 0);
+  */
+
+.create-student-page {
+  min-height: calc(100vh - 100px);
+  width: 25em;
+  margin: 1.5rem auto;
+  border-radius: 20px;
+  margin: 1.5rem auto;
+}
+
+.create-student-form > input {
+  margin-left: 1em;
+  background: #ecf0f3;
+  padding: 1em;
+  padding-left: 1.5em;
+  height: 3em;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.create-student-radion-btn {
+  display: flex;
+  flex-direction: row;
+}
+.create-student-btn {
+  background: #ffba00;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+  display: block;
+  width: 50%;
+  margin: 1.5rem auto;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.create-student-btn:hover {
+  box-shadow: none;
+}

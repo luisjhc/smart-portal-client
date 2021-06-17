@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as CONSTS from "../../utils/consts";
 import axios from "axios";
+import "./teacherCss/CreateStudent.css";
 
 function CreateStudent() {
   const [form, setForm] = useState({
@@ -63,9 +64,9 @@ function CreateStudent() {
   }
 
   return (
-    <div>
+    <div className="create-student-page">
       <h1>Create New Student</h1>
-      <form onSubmit={handleFormSubmission} className="auth__form">
+      <form onSubmit={handleFormSubmission} className="create-student-form">
         <label htmlFor="input-firstName">First Name</label>
         <input
           id="input-firstName"
@@ -139,6 +140,7 @@ function CreateStudent() {
           />
           <label htmlFor="intermediate">intermediate</label>
           <input
+            className="create-student-radion-btn"
             id="advanced"
             type="radio"
             name="level"
@@ -158,8 +160,8 @@ function CreateStudent() {
             <p>{error} 😱</p>
           </div>
         )}
-        <button className="button__submit" type="submit">
-          Submit
+        <button className="create-student-btn" type="submit">
+          Submit 👨‍🎓
         </button>
       </form>
     </div>
