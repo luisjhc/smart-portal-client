@@ -45,9 +45,9 @@ function MyPortal(props) {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="myPortal-h1">
           <h1>{props.user.level.toUpperCase()} CLASSES</h1>
-          <div>
+          <div className="myPortal-classes-container">
             {listOfContent
               .filter((content) => content.level === props.user.level)
               .map((filteredContent) => (

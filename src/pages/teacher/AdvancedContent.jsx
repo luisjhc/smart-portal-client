@@ -3,6 +3,7 @@ import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import * as PATHS from "../../utils/paths";
 import { Link } from "react-router-dom";
+import "./teacherCss/Classes.css";
 
 function AdvancedContent() {
   //const { user } = props;
@@ -25,9 +26,9 @@ function AdvancedContent() {
   }, []);
 
   return (
-    <div>
+    <div className="classes-h1">
       <h1>ADVANCED CONTENT</h1>
-      <div>
+      <div className="classes-container">
         {listOfContent
           .filter((content) => content.level === "advanced")
           .map((filteredContent) => (

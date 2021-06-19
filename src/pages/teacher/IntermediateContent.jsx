@@ -3,6 +3,7 @@ import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import * as PATHS from "../../utils/paths";
 import { Link } from "react-router-dom";
+import "./teacherCss/Classes.css";
 
 function IntermediateContent(props) {
   //const { user } = props;
@@ -43,9 +44,9 @@ function IntermediateContent(props) {
   }, []);
 
   return (
-    <div>
+    <div className="classes-h1">
       <h1>INTERMEDIATE CONTENT</h1>
-      <div>
+      <div className="classes-container">
         {listOfContent
           .filter((content) => content.level === "intermediate")
           .map((filteredContent) => (

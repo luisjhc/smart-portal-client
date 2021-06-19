@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import * as CONSTS from "../../utils/consts";
+import "./teacherCss/ListOfStudents.css";
 
 function ListOfStudents() {
   const [listOfStudents, setListOfStudents] = React.useState([]);
@@ -56,34 +57,36 @@ function ListOfStudents() {
   }
 
   return (
-    <div>
+    <div className="listOfStudents-h1">
       <h1>LIST OF STUDENTS</h1>
       {success && (
         <div className="success-block">
           <p>Student {success.data.student.username} has been deleted!. 🥳</p>
         </div>
       )}
-      {listOfStudents
-        .filter((student) => student.role === "student")
-        .map((filteredStudent) => (
-          <div key={filteredStudent._id}>
-            <ul>
-              <li>
-                <h3>
-                  {filteredStudent.firstName} {filteredStudent.lastName}
-                </h3>
-                <ul>
-                  <li>User name: {filteredStudent.username}</li>
-                  <li>Email: {filteredStudent.email}</li>
-                  <li>Level: {filteredStudent.level}</li>
-                  <button onClick={() => handleDelete(filteredStudent._id)}>
-                    Delete Student
-                  </button>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        ))}
+      <div className="listOfStudents-container">
+        {listOfStudents
+          .filter((student) => student.role === "student")
+          .map((filteredStudent) => (
+            <div key={filteredStudent._id}>
+              <ul>
+                <li>
+                  <h3>
+                    {filteredStudent.firstName} {filteredStudent.lastName}
+                  </h3>
+                  <ul>
+                    <li>User name: {filteredStudent.username}</li>
+                    <li>Email: {filteredStudent.email}</li>
+                    <li>Level: {filteredStudent.level}</li>
+                    <button onClick={() => handleDelete(filteredStudent._id)}>
+                      Delete Student
+                    </button>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
