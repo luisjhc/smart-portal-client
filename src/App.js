@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Switch, useHistory } from "react-router-dom";
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
 import LogIn from "./pages/LogIn";
 import Signup from "./pages/Signup";
@@ -69,11 +70,11 @@ export default function App() {
   }
   return (
     <div className="App">
-      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      {/* <link rel="preconnect" href="https://fonts.gstatic.com"></link>
       <link
         href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
         rel="stylesheet"
-      ></link>
+      ></link> */}
       <Navbar handleLogout={handleLogout} user={user} />
       <Switch>
         <NormalRoute exact path={PATHS.HOMEPAGE} component={HomePage} />
@@ -155,6 +156,7 @@ export default function App() {
           user={user}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }

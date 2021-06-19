@@ -13,18 +13,18 @@
   -> rgb (255, 186, 0);
   */
 
-.content-container {
+.myPortal-container {
   display: flex;
+  flex-direction: row;
   justify-items: center;
   justify-content: space-evenly;
   /* height: 100vh; */
   width: 100vw;
   margin-top: 50px;
 }
-
-.content-container > div {
+.myPortal-container > div {
   padding: 0.5em;
-  background: #fdb095;
+  background: #028ba3;
   border-radius: 20px;
   height: 60vh;
   display: flex;
@@ -33,9 +33,9 @@
   align-items: center;
   box-shadow: 10px 10px 15px #cbced1;
 }
-.content-container > div > a {
+.myPortal-container > div > a {
   color: #fff0eb;
-  background: #028ba3;
+  background: #e5958e;
   border-style: solid;
   border-radius: 10px;
   box-shadow: 10px 10px 15px #808385;
@@ -46,7 +46,7 @@
   font-weight: bold;
 }
 
-.content-container > div > svg {
+.myPortal-container > div > svg {
   padding-top: 10px;
   width: 300px;
 }
