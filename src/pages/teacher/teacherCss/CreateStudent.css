@@ -60,3 +60,7 @@
 .create-student-btn:hover {
   box-shadow: none;
 }
+
+.create-student-illustration {
+  width: 20em;
+}

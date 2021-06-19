@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as CONSTS from "../../utils/consts";
 import axios from "axios";
 import "./teacherCss/CreateStudent.css";
+import illustration from "../../img/student.png";
 
 function CreateStudent() {
   const [form, setForm] = useState({
@@ -163,6 +164,11 @@ function CreateStudent() {
         <button className="create-student-btn" type="submit">
           Submit 👨‍🎓
         </button>
+        <img
+          className="create-student-illustration"
+          src={illustration}
+          alt="student"
+        />
       </form>
     </div>
   );
