@@ -18,20 +18,23 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
+
 .signup-greeting {
   letter-spacing: 2px;
   width: 25em;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
 }
 
-.signup-illustration {
-  width: 25em;
-  margin: -2em auto;
+.signup-page-container > svg {
+  width: 20em;
+  /* height: 10em; */
+  /* position: absolute; */
+  margin: -10em auto;
 }
 
 .signup-form {
   width: 25em;
-  margin: 2rem auto;
+  margin: 2em auto;
 }
 
 .signup-form > label,

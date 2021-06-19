@@ -39,7 +39,7 @@ export default function LogIn({ authenticate, history }) {
   }
 
   return (
-    <div className="trying">
+    <div className="login-page-container">
       <h2 className="login-greeting">Welcome back to Your Smart Portal 🎓</h2>
       <Login />
       {/* <img
@@ -47,7 +47,6 @@ export default function LogIn({ authenticate, history }) {
         src={loginIllustration}
         alt="loginIllustration"
       /> */}
-      {/* <h2>Log In</h2> */}
       <form onSubmit={handleFormSubmission} className="login-form">
         <label htmlFor="input-username">Username</label>
         <input

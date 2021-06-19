@@ -4,7 +4,8 @@ import "./auth.css";
 import * as CONSTS from "../utils/consts";
 import * as PATHS from "../utils/paths";
 import "./pagesCss/Signup.css";
-import signUpIllustration from "../img/signup1.png";
+// import signUpIllustration from "../img/signup1.png";
+import { ReactComponent as SignupImg } from "../Ilustrations/signUpGirl.svg";
 
 export default function Signup({ authenticate, history }) {
   const [form, setForm] = useState({
@@ -53,11 +54,8 @@ export default function Signup({ authenticate, history }) {
       <h2 className="signup-greeting">
         Create an account to Become Your Best Self 🎓
       </h2>
-      <img
-        className="signup-illustration "
-        src={signUpIllustration}
-        alt={signUpIllustration}
-      />
+      <SignupImg />
+
       <form onSubmit={handleFormSubmission} className="signup-form">
         <label htmlFor="input-firstName">First Name</label>
         <input
