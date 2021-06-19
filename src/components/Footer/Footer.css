@@ -1,0 +1,22 @@
+/* Color Palette 👇 */
+/* ● Seashell -> #FFF0EB(HEX);
+  -> rgb(255, 240, 235);
+  ● New York Pink -> #E5958E(HEX);
+  -> rgb (229, 149, 142);
+  ● Vivid Tangerine -> #FDB095(HEX);
+  -> rgb (253, 176, 149);
+  ● Russian Violet -> #210440(HEX);
+  -> rgb (33, 4, 64);
+  ● Blue Munsell -> #028BA3(HEX);
+  -> rgb (2, 139, 163);
+  ● Selective Yellow -> #FFBA00(HEX);
+  -> rgb (255, 186, 0);
+  */
+
+.main {
+  font-family: "Times New Roman";
+  background-color: #210440;
+  color: #fff0eb;
+  padding: 10px;
+  letter-spacing: 1px;
+}
