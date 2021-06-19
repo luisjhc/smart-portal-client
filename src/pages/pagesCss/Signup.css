@@ -13,6 +13,11 @@
   -> rgb (255, 186, 0);
   */
 
+.signup-page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
 .signup-greeting {
   letter-spacing: 2px;
   width: 25em;
@@ -21,12 +26,12 @@
 
 .signup-illustration {
   width: 25em;
-  margin: -2.5em auto;
+  margin: -2em auto;
 }
 
 .signup-form {
   width: 25em;
-  margin: -4rem auto;
+  margin: 2rem auto;
 }
 
 .signup-form > label,

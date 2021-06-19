@@ -49,7 +49,7 @@ export default function Signup({ authenticate, history }) {
   }
 
   return (
-    <div>
+    <div className="signup-page-container">
       <h2 className="signup-greeting">
         Create an account to Become Your Best Self 🎓
       </h2>
