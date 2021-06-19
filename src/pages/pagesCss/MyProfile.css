@@ -177,6 +177,7 @@ input {
   border: none;
   outline: none;
   box-sizing: border-box;
+  margin-bottom: 1.5em;
 }
 
 .update-pic-form-btn:hover {
