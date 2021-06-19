@@ -13,12 +13,13 @@
   -> rgb (255, 186, 0);
   */
 
+/* TEACHER LOGGED IN 👇 */
+
 .myPortal-container {
   display: flex;
   flex-direction: row;
   justify-items: center;
   justify-content: space-evenly;
-  /* height: 100vh; */
   width: 100vw;
   margin-top: 50px;
 }
@@ -31,22 +32,65 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  box-shadow: 10px 10px 15px #cbced1;
+  box-shadow: 10px 10px 15px #47919e;
 }
 .myPortal-container > div > a {
   color: #fff0eb;
-  background: #e5958e;
+  background: #ffba00;
   border-style: solid;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px #808385;
-  padding: 5px;
+  box-shadow: 10px 10px 15px #ffba00;
+  padding: 10px;
   text-decoration: none;
   letter-spacing: 3px;
   margin-top: 10px;
   font-weight: bold;
+  font-size: 20px;
+}
+
+.myPortal-container > div > a:hover {
+  transform: scale(1.1);
 }
 
 .myPortal-container > div > svg {
   padding-top: 10px;
   width: 300px;
+}
+
+/* STUDENT LOGGED IN 👇 */
+
+.myPortal-h1 h1 {
+  letter-spacing: 3px;
+}
+
+.myPortal-classes-container {
+  display: flex;
+  justify-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 50px;
+}
+
+.myPortal-classes-container > div {
+  padding: 0.5em;
+  background: #210440;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 10px 10px 15px #463458;
+}
+
+.myPortal-classes-container > div > a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff0eb;
+  font-family: "Times New Roman";
+  padding: 0px 20px;
+}
+
+.myPortal-classes-container > div > a:hover {
+  color: #ffba00;
+  transform: scale(1.1);
 }
