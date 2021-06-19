@@ -4,7 +4,8 @@ import "./Signup";
 import * as CONSTS from "../utils/consts";
 import * as PATHS from "../utils/paths";
 import "./pagesCss/LogIn.css";
-import loginIllustration from "../img/login1.png";
+// import loginIllustration from "../img/login1.png";
+import { ReactComponent as Login } from "../Ilustrations/login.svg";
 
 export default function LogIn({ authenticate, history }) {
   const [form, setForm] = useState({
@@ -38,13 +39,14 @@ export default function LogIn({ authenticate, history }) {
   }
 
   return (
-    <div>
+    <div className="trying">
       <h2 className="login-greeting">Welcome back to Your Smart Portal 🎓</h2>
-      <img
+      <Login />
+      {/* <img
         className="login-illustration"
         src={loginIllustration}
         alt="loginIllustration"
-      />
+      /> */}
       {/* <h2>Log In</h2> */}
       <form onSubmit={handleFormSubmission} className="login-form">
         <label htmlFor="input-username">Username</label>
