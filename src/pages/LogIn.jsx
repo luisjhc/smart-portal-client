@@ -39,11 +39,7 @@ export default function LogIn({ authenticate, history }) {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="trying">
-=======
     <div className="login-page-container">
->>>>>>> dev
       <h2 className="login-greeting">Welcome back to Your Smart Portal 🎓</h2>
       <Login />
       {/* <img
