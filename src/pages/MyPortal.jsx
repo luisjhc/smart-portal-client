@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import * as PATHS from "../utils/paths";
 import axios from "axios";
 import * as CONSTS from "../utils/consts";
+import { ReactComponent as Content } from "../Ilustrations/content.svg";
+import { ReactComponent as CreateStudent } from "../Ilustrations/createStudent.svg";
+import { ReactComponent as ListOfStudents } from "../Ilustrations/listOfStudents.svg";
+import "./pagesCss/MyPortal.css";
 
 function MyPortal(props) {
   const [listOfContent, setListOfContent] = React.useState([]);
@@ -26,14 +30,19 @@ function MyPortal(props) {
   return (
     <div>
       {props.user.role === "teacher" ? (
-        <div>
-          <Link to={PATHS.CONTENT}>CONTENT</Link>
-          <br />
-          <br />
-          <Link to={PATHS.CREATESTUDENT}>CREATE NEW STUDENT</Link>
-          <br />
-          <br />
-          <Link to={PATHS.LIST_OF_STUDENTS}>LIST OF STUDENTS</Link>
+        <div className="myPortal-container">
+          <div className="myPortal-links">
+            <Link to={PATHS.CONTENT}>CONTENT</Link>
+            <Content />
+          </div>
+          <div className="myPortal-links">
+            <Link to={PATHS.CREATESTUDENT}>CREATE NEW STUDENT</Link>
+            <CreateStudent />
+          </div>
+          <div className="myPortal-links">
+            <Link to={PATHS.LIST_OF_STUDENTS}>LIST OF STUDENTS</Link>
+            <ListOfStudents />
+          </div>
         </div>
       ) : (
         <div>
