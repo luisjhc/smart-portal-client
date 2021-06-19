@@ -13,15 +13,23 @@
   -> rgb (255, 186, 0);
   */
 
-.create-student-page {
-  min-height: calc(100vh - 100px);
+.signup-greeting {
+  letter-spacing: 2px;
   width: 25em;
-  margin: 1.5rem auto;
-  border-radius: 20px;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
 }
 
-.create-student-form > label,
+.signup-illustration {
+  width: 25em;
+  margin: -2.5em auto;
+}
+
+.signup-form {
+  width: 25em;
+  margin: -4rem auto;
+}
+
+.signup-form > label,
 input {
   display: block;
   width: 100%;
@@ -30,14 +38,14 @@ input {
   outline: none;
   box-sizing: border-box;
 }
-.create-student-form > label {
+.signup-form > label {
   font-size: 1.5em;
   letter-spacing: 1px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.create-student-form > input {
+.signup-form > input {
   margin-left: 1em;
   background: #ecf0f3;
   padding: 1em;
@@ -48,11 +56,16 @@ input {
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
-.create-student-radion-btn {
+.signup-radio-btn {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 12em;
+  margin: 1.5em auto;
 }
-.create-student-btn {
+
+.signup-submit-btn {
   background: #ffba00;
   height: 40px;
   border-radius: 20px;
@@ -69,10 +82,6 @@ input {
   box-sizing: border-box;
 }
 
-.create-student-btn:hover {
+.signup-submit-btn:hover {
   box-shadow: none;
-}
-
-.create-student-illustration {
-  width: 20em;
 }

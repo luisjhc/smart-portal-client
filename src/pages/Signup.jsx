@@ -3,6 +3,8 @@ import { signup } from "../services/auth";
 import "./auth.css";
 import * as CONSTS from "../utils/consts";
 import * as PATHS from "../utils/paths";
+import "./pagesCss/Signup.css";
+import signUpIllustration from "../img/signup1.png";
 
 export default function Signup({ authenticate, history }) {
   const [form, setForm] = useState({
@@ -48,8 +50,15 @@ export default function Signup({ authenticate, history }) {
 
   return (
     <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleFormSubmission} className="auth__form">
+      <h2 className="signup-greeting">
+        Create an account to Become Your Best Self 🎓
+      </h2>
+      <img
+        className="signup-illustration "
+        src={signUpIllustration}
+        alt={signUpIllustration}
+      />
+      <form onSubmit={handleFormSubmission} className="signup-form">
         <label htmlFor="input-firstName">First Name</label>
         <input
           id="input-firstName"
@@ -102,7 +111,7 @@ export default function Signup({ authenticate, history }) {
           required
         />
         <label htmlFor="input-role">Are you a teacher or a student?</label>
-        <div>
+        <div className="signup-radio-btn">
           <input
             id="teacher"
             type="radio"
@@ -128,8 +137,8 @@ export default function Signup({ authenticate, history }) {
             <p>{error.message}</p>
           </div>
         )}
-        <button className="button__submit" type="submit">
-          Submit
+        <button className="signup-submit-btn" type="submit">
+          Submit 🎓
         </button>
       </form>
     </div>
