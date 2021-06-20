@@ -1,0 +1,27 @@
+.singleClass-main {
+  font-family: "Times New Roman";
+}
+
+.singleClass-contentWithImage {
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 0px 15px;
+}
+
+.singleClass-contentWithImage img {
+  display: block;
+  margin: 0 auto;
+}
+
+.singleClass-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.singleClass-contentWithoutImage {
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 0px 15px;
+}

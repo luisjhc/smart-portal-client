@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import ReactPlayer from "react-player";
+import "./Exercises.css";
 
 function AudioExercise(props) {
   //console.log("props:", props);
@@ -53,55 +54,66 @@ function AudioExercise(props) {
   //console.log("response:", exercises);
 
   return (
-    <div className="app">
+    <div className="quizExercise-main">
+      <h1>LISTENING QUIZ</h1>
       {!exercises.audioQuiz ? (
         <h1>Loading...</h1>
       ) : (
         <div>
-          <h1>LISTENING QUIZ</h1>
-          {/* {console.log(exercises.audioSource.includes("mp3"))} */}
-          {exercises.audioSource.includes("mp3") ? (
-            <ReactPlayer url={exercises.audioSource} height="50px" controls />
-          ) : (
-            <ReactPlayer url={exercises.audioSource} controls />
-          )}
-          {showScore ? (
-            <div className="score-section">
-              <div>
-                You scored {score} out of {exercises.audioQuiz.length}
-              </div>
-              <div>
-                <button onClick={resetQuiz}>reset</button>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="question-section">
-                <div className="question-count">
-                  <span>Question {currentQuestion + 1}</span>/
-                  {exercises.audioQuiz.length}
-                </div>
-                <div className="question-text">
-                  {exercises.audioQuiz[currentQuestion].questionText}
-                </div>
-              </div>
-              <div className="answer-section">
-                {exercises.audioQuiz[currentQuestion]?.answerOptions.map(
-                  (answerOption, index) => (
+          <div>
+            {/* {console.log(exercises.audioSource.includes("mp3"))} */}
+            {exercises.audioSource.includes("mp3") ? (
+              <ReactPlayer url={exercises.audioSource} height="50px" controls />
+            ) : (
+              <ReactPlayer url={exercises.audioSource} controls />
+            )}
+          </div>
+          <div className="quizExercise-container">
+            <div className="quizExercise-questions">
+              {showScore ? (
+                <div className="score-section">
+                  <div>
+                    You scored {score} out of {exercises.audioQuiz.length}
+                  </div>
+                  <div>
                     <button
-                      className="buttonQuiz"
-                      key={index}
-                      onClick={() =>
-                        handleAnswerOptionClick(answerOption.isCorrect)
-                      }
+                      className="quizExercise-resetButton"
+                      onClick={resetQuiz}
                     >
-                      {answerOption.answerText}
+                      reset
                     </button>
-                  )
-                )}
-              </div>
-            </>
-          )}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="question-section">
+                    <div className="question-count">
+                      <span>Question {currentQuestion + 1}</span>/
+                      {exercises.audioQuiz.length}
+                    </div>
+                    <div className="question-text">
+                      {exercises.audioQuiz[currentQuestion].questionText}
+                    </div>
+                  </div>
+                  <div className="answer-section">
+                    {exercises.audioQuiz[currentQuestion]?.answerOptions.map(
+                      (answerOption, index) => (
+                        <button
+                          className="buttonQuiz"
+                          key={index}
+                          onClick={() =>
+                            handleAnswerOptionClick(answerOption.isCorrect)
+                          }
+                        >
+                          {answerOption.answerText}
+                        </button>
+                      )
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

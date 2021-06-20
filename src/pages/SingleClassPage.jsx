@@ -3,6 +3,7 @@ import axios from "axios";
 import * as CONSTS from "../utils/consts";
 import ReactMarkdown from "react-markdown";
 import ReactPlayer from "react-player";
+import "./pagesCss/SingleClassPage.css";
 
 function SingleClassPage(props) {
   //console.log("props:", props);
@@ -25,18 +26,22 @@ function SingleClassPage(props) {
   }, [props.match.params.classId]);
 
   return (
-    <div>
+    <div className="singleClass-main">
       <h1>{singleClass.title}</h1>
       {singleClass.image ? (
-        <div>
+        <div className="singleClass-contentWithImage">
           <img src={singleClass.image} alt="types of questions" />
           <ReactMarkdown>{singleClass.text}</ReactMarkdown>
-          <ReactPlayer url={singleClass.video} controls />
+          <div className="singleClass-video">
+            <ReactPlayer url={singleClass.video} controls />
+          </div>
         </div>
       ) : (
-        <div>
+        <div className="singleClass-contentWithoutImage">
           <ReactMarkdown>{singleClass.text}</ReactMarkdown>
-          <ReactPlayer url={singleClass.video} controls />
+          <div className="singleClass-video">
+            <ReactPlayer url={singleClass.video} controls />
+          </div>
         </div>
       )}
     </div>

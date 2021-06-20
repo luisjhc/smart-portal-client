@@ -50,51 +50,58 @@ function QuizExercise(props) {
   };
 
   return (
-    <div className="app">
-      {!exercises.quiz ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-          <h1>CLASS QUIZ</h1>
-          {showScore ? (
-            <div className="score-section">
-              <div>
-                You scored {score} out of {exercises.quiz?.length}
-              </div>
-              <div>
-                <button onClick={resetQuiz}>reset</button>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="question-section">
-                <div className="question-count">
-                  <span>Question {currentQuestion + 1}</span>/
-                  {exercises.quiz?.length}
+    <div className="quizExercise-main">
+      <h1>CLASS QUIZ</h1>
+      <div className="quizExercise-questions">
+        {!exercises.quiz ? (
+          <h1>Loading...</h1>
+        ) : (
+          <div>
+            {showScore ? (
+              <div className="score-section">
+                <div>
+                  You scored {score} out of {exercises.quiz?.length}
                 </div>
-                <div className="question-text">
-                  {exercises.quiz?.[currentQuestion].questionText}
+                <div>
+                  <button
+                    className="quizExercise-resetButton"
+                    onClick={resetQuiz}
+                  >
+                    reset
+                  </button>
                 </div>
               </div>
-              <div className="answer-section">
-                {exercises.quiz?.[currentQuestion]?.answerOptions?.map?.(
-                  (answerOption, index) => (
-                    <button
-                      className="buttonQuiz"
-                      key={index}
-                      onClick={() =>
-                        handleAnswerOptionClick(answerOption.isCorrect)
-                      }
-                    >
-                      {answerOption.answerText}
-                    </button>
-                  )
-                )}
-              </div>
-            </>
-          )}
-        </div>
-      )}
+            ) : (
+              <>
+                <div className="question-section">
+                  <div className="question-count">
+                    <span>Question {currentQuestion + 1}</span>/
+                    {exercises.quiz?.length}
+                  </div>
+                  <div className="question-text">
+                    {exercises.quiz?.[currentQuestion].questionText}
+                  </div>
+                </div>
+                <div className="answer-section">
+                  {exercises.quiz?.[currentQuestion]?.answerOptions?.map?.(
+                    (answerOption, index) => (
+                      <button
+                        className="buttonQuiz"
+                        key={index}
+                        onClick={() =>
+                          handleAnswerOptionClick(answerOption.isCorrect)
+                        }
+                      >
+                        {answerOption.answerText}
+                      </button>
+                    )
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
