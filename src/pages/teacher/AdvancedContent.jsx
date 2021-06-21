@@ -4,6 +4,7 @@ import * as CONSTS from "../../utils/consts";
 import * as PATHS from "../../utils/paths";
 import { Link } from "react-router-dom";
 import "./teacherCss/Classes.css";
+import { motion } from "framer-motion";
 
 function AdvancedContent() {
   //const { user } = props;
@@ -28,7 +29,12 @@ function AdvancedContent() {
   return (
     <div className="classes-h1">
       <h1>ADVANCED CONTENT</h1>
-      <div className="classes-container">
+      <motion.div
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="classes-container"
+      >
         {listOfContent
           .filter((content) => content.level === "advanced")
           .map((filteredContent) => (
@@ -41,7 +47,7 @@ function AdvancedContent() {
               </Link>
             </div>
           ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

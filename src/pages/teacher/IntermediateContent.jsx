@@ -4,6 +4,7 @@ import * as CONSTS from "../../utils/consts";
 import * as PATHS from "../../utils/paths";
 import { Link } from "react-router-dom";
 import "./teacherCss/Classes.css";
+import { motion } from "framer-motion";
 
 function IntermediateContent(props) {
   //const { user } = props;
@@ -46,7 +47,12 @@ function IntermediateContent(props) {
   return (
     <div className="classes-h1">
       <h1>INTERMEDIATE CONTENT</h1>
-      <div className="classes-container">
+      <motion.div
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="classes-container"
+      >
         {listOfContent
           .filter((content) => content.level === "intermediate")
           .map((filteredContent) => (
@@ -59,7 +65,7 @@ function IntermediateContent(props) {
               </Link>
             </div>
           ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
