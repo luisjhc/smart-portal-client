@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import "./teacherCss/ListOfStudents.css";
+import { motion } from "framer-motion";
 
 function ListOfStudents() {
   const [listOfStudents, setListOfStudents] = React.useState([]);
@@ -68,7 +69,12 @@ function ListOfStudents() {
         {listOfStudents
           .filter((student) => student.role === "student")
           .map((filteredStudent) => (
-            <div key={filteredStudent._id}>
+            <motion.div
+              initial={{ scale: 0.7 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.4 }}
+              key={filteredStudent._id}
+            >
               <ul>
                 <li>
                   <h3>
@@ -84,7 +90,7 @@ function ListOfStudents() {
                   </ul>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           ))}
       </div>
     </div>
