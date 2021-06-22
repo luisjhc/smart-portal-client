@@ -12,7 +12,7 @@
 
 ![portalExample](/src/img/readme-img2.png)
 
-**[ Link to the website](https://smart-portal.netlify.app/)**
+**[ &#127891; Link to the website](https://smart-portal.netlify.app/)**
 
 #### :copyright: Created by
 
