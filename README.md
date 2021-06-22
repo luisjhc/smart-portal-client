@@ -6,4 +6,4 @@
 
 ### Smart Portal makes it easy for users to learn & teach anytime &#9200; and anywhere &#127758;
 
-![portalExample] (/src/img/readme-img2.png)
+![portalExample](/src/img/readme-img2.png)
