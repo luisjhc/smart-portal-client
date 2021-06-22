@@ -2,7 +2,7 @@
 
 ### Our learning platform provides dynamic & innovative content. &#128214;
 
-#### &#128104;&#8205;&#127891; The learners get the lessons, that are relevant only to them and their needs & wants.
+#### &#128221; The learners get the lessons, that are relevant only to them and their needs & wants.
 
 ![portalPage](/src/img/portal-img-readme.png)
 
@@ -19,6 +19,14 @@
 - to let your learners get into the system and keep out those who aren’t registered. :heavy_plus_sign:
 
 - to provide easy routes for the learners to navigate through the content. &#129517;
+
+### &#128104;&#8205;&#127891; Create a Student account:
+
+- to receive a gateaway to the personalized learning platform.
+
+- to navigate through the content, that corresponds your level. &#9968;&#65039;
+
+- to practice your skills with various exercices.
 
 **[ &#127891; Link to the website](https://smart-portal.netlify.app/)**
 
