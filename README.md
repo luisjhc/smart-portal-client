@@ -12,6 +12,14 @@
 
 ![portalExample](/src/img/readme-img2.png)
 
+### &#129489;&#8205;&#127979; Create a Teacher account:
+
+- to createre sources and instruments, that facilitate learning process.:heavy_check_mark:
+
+- to let your learners get into the system and keep out those who aren’t registered. :heavy_plus_sign:
+
+- to provide easy routes for the learners to navigate through the content. &#129517;
+
 **[ &#127891; Link to the website](https://smart-portal.netlify.app/)**
 
 #### :copyright: Created by
