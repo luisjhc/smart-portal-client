@@ -1,6 +1,6 @@
 ## &#127891; Smart Portal is your opportunity to become Your Best Self.
 
-### Our learning platform provides dynamic & innovative content. &#128214;
+#### Our learning platform provides dynamic & innovative content. &#128214;
 
 #### &#128221; The learners get the lessons, that are relevant only to them and their needs & wants.
 
