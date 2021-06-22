@@ -28,3 +28,14 @@
 and
 [Khrystyna Leshko](https://github.com/KhrystynaLeshko)
 as Final Project at Ironhack.
+
+#### Used Technologies &#129489;&#8205;&#128187; :
+
+- JavaScript
+- ReactJS
+- ExpressJS
+- NodeJS
+- MongoDB
+- HTML & CSS
+- Ironlauncher
+- Love, Fun and Patience
