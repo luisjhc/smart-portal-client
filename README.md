@@ -1,7 +1,5 @@
 ## &#127891; Smart Portal is your opportunity to become Your Best Self.
 
-![logo](/src/img/logo3.png)
-
 #### Our learning platform provides dynamic & innovative content. &#128214;
 
 #### &#128221; The learners get the lessons, that are relevant only to them and their needs & wants.
@@ -29,6 +27,8 @@
 - to navigate through the content, that corresponds your level. &#9968;&#65039;
 
 - to practice your skills with various exercices.
+
+![logo](/src/img/logo3.png)
 
 **[ &#127891; Link to the website](https://smart-portal.netlify.app/)**
 
