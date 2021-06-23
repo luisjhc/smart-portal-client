@@ -15,7 +15,7 @@
 
 .create-student-page {
   min-height: calc(100vh - 100px);
-  width: 25em;
+  /* width: 400px; */
   margin: 1.5rem auto;
   border-radius: 20px;
   margin: 1.5rem auto;
@@ -38,7 +38,7 @@ input {
 }
 
 .create-student-form > input {
-  margin-left: 1em;
+  /* margin-left: 1em; */
   background: #ecf0f3;
   padding: 1em;
   padding-left: 1.5em;
@@ -51,7 +51,9 @@ input {
 .create-student-radion-btn {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
+
 .create-student-btn {
   background: #ffba00;
   height: 40px;

@@ -14,14 +14,18 @@
   */
 
 .signup-page-container {
-  display: grid;
+  /* display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 .signup-greeting {
   letter-spacing: 2px;
-  width: 25em;
+  /* width: 25em; */
   margin: 2.5rem auto;
 }
 
@@ -33,13 +37,17 @@
 }
 
 .signup-form {
-  width: 25em;
-  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  /* width: 25em; */
+  /* margin: 2em auto; */
 }
 
 .signup-form > label,
 input {
-  display: block;
+  /* display: block; */
   width: 100%;
   padding: 0;
   border: none;
@@ -49,12 +57,11 @@ input {
 .signup-form > label {
   font-size: 1.5em;
   letter-spacing: 1px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin:10px 0;
 }
 
 .signup-form > input {
-  margin-left: 1em;
+  /* margin-left: 1em; */
   background: #ecf0f3;
   padding: 1em;
   padding-left: 1.5em;
@@ -70,7 +77,7 @@ input {
   justify-content: center;
   align-items: center;
   width: 12em;
-  margin: 1.5em auto;
+  margin: 0.5em;
 }
 
 .signup-submit-btn {
@@ -83,7 +90,7 @@ input {
   transition: 0.5s;
   display: block;
   width: 50%;
-  margin: 1.5rem auto;
+  margin: 1.5rem;
   padding: 0;
   border: none;
   outline: none;
@@ -92,4 +99,28 @@ input {
 
 .signup-submit-btn:hover {
   box-shadow: none;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .signup-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .signup-greeting {
+    font-size: 20px;
+  }
+
+  .signup-page-container svg {
+    width: 250px;
+  }
 }

@@ -23,18 +23,19 @@
 }
 
 .nav-container {
+  /* display: flex;
+  flex-direction: row; */
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-gap: 1em;
   place-items: center center;
   padding: 0.5em;
-  /* justify-content: space-around;
-  flex-wrap: wrap; */
+  /* justify-content: space-around;*/
+  /* flex-wrap: wrap;  */
   background: #210440;
   /* font-weight: bold; */
   font-size: larger;
   letter-spacing: 2px;
-  /* height: 60px; */
 }
 
 .nav-myPortal {
@@ -112,4 +113,43 @@
 .nav-logout-btn:hover {
   transform: scale(1.05);
   background-color: #ffba00;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .nav-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .nav-userGreeting-img{
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-userGreeting p,
+  .nav__authLinks a,
+  .nav-logout-btn {
+    font-size: 12px;
+  }
+
+  .nav-logout-btn {
+    padding: 0.2em;
+    margin-right: 5px;
+  }
+  .nav__authLinks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  .nav-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }

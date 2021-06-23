@@ -13,27 +13,34 @@
   -> rgb (255, 186, 0);
   */
 
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
 .login-greeting {
   letter-spacing: 2px;
-  width: 25em;
-  margin: 2rem auto;
+  margin: 2rem;
 }
 
 .login-page-container > svg {
   width: 20em;
   position: absolute;
-  margin: -10.5em 13em;
+  margin: -7.5em 23em;
 }
 
 .login-form {
-  width: 25em;
-  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  width: 30%;
 }
 
 .login-form > label,
 input {
-  display: block;
-  width: 100%;
   padding: 0;
   border: none;
   outline: none;
@@ -43,12 +50,10 @@ input {
 .login-form > label {
   font-size: 1.5em;
   letter-spacing: 2px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top:10px;
 }
 
 .login-form > input {
-  margin-left: 1em;
   background: #ecf0f3;
   padding: 1em;
   padding-left: 1.5em;
@@ -66,9 +71,8 @@ input {
   font-weight: 900;
   box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
   transition: 0.5s;
-  display: block;
   width: 50%;
-  margin: 1.5rem auto;
+  margin: 1.5rem;
   padding: 0;
   border: none;
   outline: none;
@@ -77,4 +81,28 @@ input {
 
 .login-submit-btn:hover {
   box-shadow: none;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .login-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .login-page-container svg{
+    position: relative;
+    margin: 0;
+    width: 200px;
+    height: auto;
+  }
+
+  .login-form {
+    width: 250px;
+  }
+
+  .login-greeting {
+    font-size: 15px;
+  }
 }
