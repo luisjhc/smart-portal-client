@@ -1,5 +1,10 @@
 .singleClass-main {
   font-family: "Times New Roman";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }
 
 .singleClass-contentWithImage {
@@ -24,4 +29,15 @@
   text-align: justify;
   text-justify: inter-word;
   padding: 0px 15px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .singleClass-main {
+    background-color: #fff0eb;
+  }
+  .singleClass-video > * {
+    width: 320px;
+    height: 180px;
+    margin: 0 auto;
+  }
 }
