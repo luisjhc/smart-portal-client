@@ -22,7 +22,7 @@
 
 ### &#128104;&#8205;&#127891; Create a Student account:
 
-- to receive a gateaway to the personalized learning platform.
+- to receive a gateway to the personalized learning platform.
 
 - to navigate through the content, that corresponds your level. &#9968;&#65039;
 
@@ -46,6 +46,7 @@ as Final Project at Ironhack.
 - ExpressJS
 - NodeJS
 - MongoDB
+- Axios
 - HTML & CSS
 - Ironlauncher
 - Love, Fun and Patience
