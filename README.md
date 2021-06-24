@@ -28,7 +28,7 @@
 
 - to practice your skills with various exercices.
 
-![logo](/src/img/logo3.png)
+![logo](/src/img/logo-final.png)
 
 **[ &#127891; Link to the website](https://smart-portal.netlify.app/)**
 
