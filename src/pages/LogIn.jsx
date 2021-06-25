@@ -30,7 +30,12 @@ export default function LogIn({ authenticate, history }) {
     };
     login(credentials).then((res) => {
       if (!res.status) {
-        return setError({ message: "Invalid credentials" });
+        return (
+          setError(res.errorMessage),
+          setTimeout(() => {
+            setError("");
+          }, 2500)
+        );
       }
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
       authenticate(res.data.user);
@@ -42,11 +47,6 @@ export default function LogIn({ authenticate, history }) {
     <div className="login-page-container">
       <h2 className="login-greeting">Welcome back to Your Smart Portal 🎓</h2>
       <Login />
-      {/* <img
-        className="login-illustration"
-        src={loginIllustration}
-        alt="loginIllustration"
-      /> */}
       <form onSubmit={handleFormSubmission} className="login-form">
         <label htmlFor="input-username">Username</label>
         <input
@@ -73,8 +73,7 @@ export default function LogIn({ authenticate, history }) {
 
         {error && (
           <div className="error-block">
-            <p>There was an error submiting the form:</p>
-            <p>{error.message}</p>
+            <p>{error} 😱</p>
           </div>
         )}
 

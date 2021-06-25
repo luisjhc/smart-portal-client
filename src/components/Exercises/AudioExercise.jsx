@@ -54,7 +54,7 @@ function AudioExercise(props) {
   //console.log("response:", exercises);
 
   return (
-    <div className="quizExercise-main">
+    <div className="audioExercise-main">
       <h1>LISTENING QUIZ</h1>
       {!exercises.audioQuiz ? (
         <h1>Loading...</h1>
@@ -68,7 +68,7 @@ function AudioExercise(props) {
               <ReactPlayer url={exercises.audioSource} controls />
             )}
           </div>
-          <div className="quizExercise-container">
+          <div className="audioExercise-container">
             <div className="quizExercise-questions">
               {showScore ? (
                 <div className="score-section">

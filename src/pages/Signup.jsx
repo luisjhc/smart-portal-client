@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { signup } from "../services/auth";
-import "./auth.css";
 import * as CONSTS from "../utils/consts";
 import * as PATHS from "../utils/paths";
 import "./pagesCss/Signup.css";
@@ -35,12 +34,21 @@ export default function Signup({ authenticate, history }) {
       role,
     };
     signup(credentials).then((res) => {
+      // unsuccessful signup
       if (!res.status) {
-        // unsuccessful signup
-        console.error("Signup was unsuccessful: ", res);
-        return setError({
-          message: "Signup was unsuccessful! Please check the console.",
-        });
+        //console.error("Signup was unsuccessful: ", res);
+        return (
+          setError(res.errorMessage),
+          setTimeout(() => {
+            setError("");
+          }, 2500)
+        );
+      }
+
+      if (error) {
+        setTimeout(() => {
+          setError("");
+        }, 2500);
       }
       // successful signup
       localStorage.setItem(CONSTS.ACCESS_TOKEN, res.data.accessToken);
@@ -131,8 +139,7 @@ export default function Signup({ authenticate, history }) {
         </div>
         {error && (
           <div className="error-block">
-            <p>There was an error submiting the form:</p>
-            <p>{error.message}</p>
+            <p>{error} 😱</p>
           </div>
         )}
         <button className="signup-submit-btn" type="submit">

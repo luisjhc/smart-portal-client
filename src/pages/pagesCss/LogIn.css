@@ -14,10 +14,10 @@
   */
 
 .login-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 .login-greeting {
@@ -26,9 +26,10 @@
 }
 
 .login-page-container > svg {
-  width: 20em;
-  position: absolute;
-  margin: -7.5em 23em;
+  width: 240px;
+  height: 160px;
+  /* position: absolute; */
+  /* margin: -7.5em -23em; */
 }
 
 .login-form {
@@ -50,7 +51,7 @@ input {
 .login-form > label {
   font-size: 1.5em;
   letter-spacing: 2px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .login-form > input {
@@ -91,7 +92,7 @@ input {
     justify-items: center;
   }
 
-  .login-page-container svg{
+  .login-page-container svg {
     position: relative;
     margin: 0;
     width: 200px;

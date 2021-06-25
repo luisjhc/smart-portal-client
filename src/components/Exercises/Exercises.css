@@ -3,12 +3,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff0eb;
+}
+
+.audioExercise-main {
+  font-family: "Times New Roman";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff0eb;
 }
 
 .quizExercise-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.audioExercise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 .quizExercise-questions {
