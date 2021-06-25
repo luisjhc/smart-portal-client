@@ -61,7 +61,7 @@ function ListOfStudents() {
     <div className="listOfStudents-h1">
       <h1>LIST OF STUDENTS</h1>
       {success && (
-        <div className="success-block">
+        <div className="listOfStudents-success-block">
           <p>Student {success.data.student.username} has been deleted!. 🥳</p>
         </div>
       )}

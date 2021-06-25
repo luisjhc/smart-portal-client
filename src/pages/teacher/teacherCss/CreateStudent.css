@@ -78,3 +78,11 @@ input {
 .create-student-illustration {
   width: 20em;
 }
+
+.success-block p {
+  letter-spacing: 1.5px;
+}
+
+.error-block p {
+  letter-spacing: 1.5px;
+}

@@ -13,6 +13,11 @@
   -> rgb (255, 186, 0);
   */
 
+.listOfStudents-success-block p {
+  letter-spacing: 1.5px;
+  font-size: large;
+}
+
 .listOfStudents-h1 {
   letter-spacing: 3px;
 }
